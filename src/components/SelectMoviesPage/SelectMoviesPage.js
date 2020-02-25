@@ -39,6 +39,7 @@ class SelectMoviesPage extends React.Component {
       if (Object.keys(this.state.selected).length < 5) {
         return alert("Please select more than 4 movies"); 
       }
+      
       const selectedMovies = Object.keys(this.state.selected).map(i => movies[parseInt(i)]);
       survey.get().selectedMovies = selectedMovies;
 

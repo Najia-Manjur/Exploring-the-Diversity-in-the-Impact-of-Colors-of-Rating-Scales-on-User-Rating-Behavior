@@ -48,10 +48,15 @@ class RatePage extends React.Component {
     const {m, r} = this.parse();
     const {name, img} = survey.get().selectedMovies[m];
     const rated = survey.get().selectedMovies[m][r];
+
+    let movie_number = 50 - survey.get().navSequence.length;
+
     return (
       <div className="text-center">
         <Container>
-          <h6>Please rate the movie:</h6>
+          <h6></h6>
+          <p>{movie_number + " of " + 50 }</p>
+          <p>Please rate the movie: </p>
           <img src={img} alt="Poster" height="400" width="240" />
           <h6>{name}</h6>
           {

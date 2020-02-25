@@ -30,10 +30,11 @@ class CommonRatePage extends React.Component {
   }
 
   render() {
+
     return (
       <div>
         <Container>
-          <h6>Please rate the movies you have selected :</h6>
+          <h6>Please rate the following movies:</h6>
           <ListGroup 
             style={{
               overflow: "auto"
@@ -60,7 +61,8 @@ class CommonRatePage extends React.Component {
             }
           </ListGroup>
           <br/>
-          <Button style={{"float":"left"}} onClick={this.handleBack}>Previous</Button>
+          <p>In the next page, you will be asked to rate these movies again using multiple scales. You do not have to
+          remember the exact rating you gave here for every movie, just go with the flow and rate what you feel like!</p>
           <Button style={{"float":"right"}} onClick={this.handleNext}>Next</Button>
         </Container>
       </div>

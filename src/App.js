@@ -2,9 +2,12 @@ import React from "react";
 import { HashRouter, Switch, Redirect, Route } from "react-router-dom";
 import { Beforeunload } from 'react-beforeunload';
 
+import Demographics from "./components/Demographics/Demographics";
+import ConsentPage from "./components/ConsentPage/ConsentPage";
 import PersonalityPage from "./components/PersonalityPage/PersonalityPage";
 import SadHappyPage from "./components/SadHappyPage/SadHappyPage";
 import CommonRatePage from "./components/CommonRatePage/CommonRatePage";
+import CommonRatingScalePage from "./components/CommonRatingScalePage/CommonRatingScalePage";
 import ExplainReviewPage from "./components/ExplainReviewPage/ExplainReviewPage";
 import ReviewPage from "./components/ReviewPage/ReviewPage";
 import ReviewoverallPage from "./components/ReviewoverallPage/ReviewoverallPage";
@@ -25,7 +28,50 @@ const _personality = obj({
   talkative: num,
   faultWithOthers: num,
   thoroughJob: num,
-  depressed: num
+  depressed: num,
+  original: num,
+  reserved: num,
+  helpful: num,
+  careless: num,
+  relaxed: num,
+  curious: num,
+  energy: num,
+  quarrels: num,
+  reliable: num,
+  tense: num,
+  deepThinker: num,
+  enthusiasm: num,
+  forgiving: num,
+  disorganized: num,
+  worried: num,
+  activeImagination: num,
+  quiet: num,
+  trusting: num,
+  lazy: num,
+  upset: num,
+  inventive: num,
+  assertive: num,
+  coldAloof: num,
+  perseverence: num,
+  moody: num,
+  artistic: num,
+  shy: num,
+  kind: num,
+  efficient: num,
+  calm: num,
+  routineWork: num,
+  outgoing: num,
+  rude: num,
+  makePlans: num,
+  nervous: num,
+  reflective: num,
+  fewArtInterest: num,
+  cooperative: num,
+  distracted: num,
+  sophisticatedInArt: num,
+  age: num,
+  gender: string().required(),
+  country: string().required()
 });
 
 const _movie = array().of(obj({
@@ -192,13 +238,16 @@ export default class App extends React.Component {
       <Beforeunload onBeforeunload={() => "Survey data can be loss, are you sure?"}>
         <HashRouter>
           <Switch>
-            <Route exact path="/" component={PersonalityPage} />
+            <Route exact path="/" component={ConsentPage} />
+            <Route exact path="/demographics" component={Demographics} />
+            <Route exact path="/info" component={PersonalityPage} />
             <Route exact path="/error" component={ErrorPage} />
             <RestrictedRoute exact path="/sadhappy1" component={SadHappyPage} />
             <RestrictedRoute exact path="/sadhappy2" component={SadHappyPage} />
             <RestrictedRoute exact path="/sadhappy3" component={SadHappyPage} />
             <RestrictedRoute exact path="/common" component={CommonRatePage} />
             <RestrictedRoute exact path="/reviewoverall" component={ReviewoverallPage} />
+            <Route exact path="/commonratingscalepage" component={CommonRatingScalePage} />
             <RestrictedRoute exact path="/explainreview" component={ExplainReviewPage} />
             <RestrictedRoute exact path="/askemail" component={AskEmailPage} />
             <RestrictedRoute exact path="/email" component={EmailPage} />

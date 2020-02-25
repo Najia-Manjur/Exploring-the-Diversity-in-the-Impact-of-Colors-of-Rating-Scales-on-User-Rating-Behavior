@@ -32,11 +32,6 @@
 	},
 
 	{
-		"name": "Clash of The Titans(2010)",
-		"img": "https://1.bp.blogspot.com/_Z3BUX71Sca8/S7avZb1rQLI/AAAAAAAAJv4/ap3fGeACzYw/s400/clashofthetitans-11.jpg"
-	},
-
-	{
 		"name": "Fifty Shades of Grey(2015)",
 		"img": "https://upload.wikimedia.org/wikipedia/en/7/73/Fifty_Shades_of_Grey_poster.jpg"
 	},
@@ -44,6 +39,9 @@
 	{
 		"name": "Twilight(2008)",
 		"img": "https://upload.wikimedia.org/wikipedia/en/b/b6/Twilight_%282008_film%29_poster.jpg"
+	},
+	{
+		"name": "Venom(2018)",
+		"img": "https://marvel-movies.fandom.com/wiki/Venom_(film)?file=Venom_Poster.jpg"
 	}
-
 ]

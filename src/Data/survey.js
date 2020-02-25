@@ -9,6 +9,7 @@ export default {
 	get: () => {
     if (!survey) {
       survey = {};
+      survey.personality = {};
       survey.selectedMovies = movies;
       const movieids = utils.numberList(movies.length);
       const ratingstyles = symbols.ratingStyles;
@@ -139,4 +140,4 @@ const test2 = {
     ]
 }
 
-// survey = test2;
+// survey = test1;

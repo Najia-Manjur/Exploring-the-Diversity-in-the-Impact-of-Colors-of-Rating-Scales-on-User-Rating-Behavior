@@ -35,9 +35,9 @@ class AskEmailPage extends React.Component {
     return (
       <AsyncAwareContainer loading={this.state.loading}>
         <Container>
-          <h6> In appreciation of your participation, we would like to offer you the opportunity to enter in a raffle to win $50 gift vouchers. You need to provide your email id if you  want to enter in the raffle draw. If you do not wish to participate in the raffle, you may skip this step and exit the survey.
+          <h6> In appreciation of your participation, we would like to offer you the opportunity to enter in a raffle to win $50 gift vouchers. You need to provide your email id if you want to enter in the raffle draw. If you do not wish to participate in the raffle, you may skip this step and exit the survey.
           </h6>
-          <h6>Do you wish to participate in the survey?</h6>
+          <h6>Do you wish to participate in the raffle?</h6>
           <br/><br/>
           <Button style={{"float":"left"}} onClick={this.handleNext}>Yes and go to next page</Button>
           <Button style={{"float":"right"}} onClick={this.handlExit}>No and EXIT</Button>

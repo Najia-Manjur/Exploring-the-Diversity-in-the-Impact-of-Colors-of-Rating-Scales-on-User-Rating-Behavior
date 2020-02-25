@@ -42,7 +42,7 @@ class EmailPage extends React.Component {
     return (
       <div>
         <Container>
-          <h6> Please provide your email id to participate in the raffle draw selection: </h6>
+          <h6> Please provide your email ID to participate in the raffle draw selection: </h6>
           <br/><br/>
           <FormRow name="email" onChange={this.handleChange} />
           <Button style={{"float":"right"}} onClick={this.handleSubmit}>Submit</Button>

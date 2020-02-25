@@ -5,7 +5,7 @@ import Rating from "react-rating";
 import "../survey.css";
 import symbols from "../symbols.json";
 
-class ReviewoverallPage extends React.Component {
+class CommonRatingScalePage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -22,7 +22,7 @@ class ReviewoverallPage extends React.Component {
 
     this.handleNext = () => {
       survey.get().reviewOverall = this.state.choice;
-      this.props.history.replace(`/commonratingscalepage`);
+      this.props.history.replace(`/explainreview`);
     }
   }
 
@@ -30,7 +30,7 @@ class ReviewoverallPage extends React.Component {
     return (
       <div>
         <Container>
-          <h6>Your ratings will be considered very helpful into the final ratings provided by the studio, would you like to re-rate it again ? If so, which one of the rating scales would you use?</h6>
+          <h6>Which of the following rating scale do you usually see on the internet?</h6>
           {
             symbols.allRatingStyles.map((r, i) =>
               <div key={i}>
@@ -61,4 +61,4 @@ class ReviewoverallPage extends React.Component {
   }
 }
 
-export default ReviewoverallPage;
+export default CommonRatingScalePage;

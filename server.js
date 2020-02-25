@@ -35,6 +35,8 @@ app.listen(port, () => console.log(`Listening on ${port}`));
 //
 //####################################
 // const {google} = require('googleapis');
+
+// turn this on
 const SHARED_FOLDER = process.env.SHARED_FOLDER;
 const CLIENT_EMAIL = process.env.CLIENT_EMAIL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
@@ -140,7 +142,55 @@ async function getOverallTableId() {
   const overallSheet = await createSpreadsheet('Overall');
   await insertRows(overallSheet.spreadsheetId,
     [
-      ['userId', 'talkative','faultWithOthers','thoroughJob','depressed','sadhappy1','sadhappy2','sadhappy3']
+      [
+      'userId',
+      'talkative',
+      'faultWithOthers',
+      'thoroughJob',
+      'depressed',
+      'original',
+      'reserved',
+      'helpful',
+      'careless',
+      'relaxed',
+      'curious',
+      'energy',
+      'quarrels',
+      'reliable',
+      'tense',
+      'deepThinker',
+      'enthusiasm',
+      'forgiving',
+      'disorganized',
+      'worried',
+      'activeImagination',
+      'quiet',
+      'trusting',
+      'lazy',
+      'upset',
+      'inventive',
+      'assertive',
+      'coldAloof',
+      'perseverence',
+      'moody',
+      'artistic',
+      'shy',
+      'kind',
+      'efficient',
+      'calm',
+      'routineWork',
+      'outgoing',
+      'rude',
+      'makePlans',
+      'nervous',
+      'reflective',
+      'fewArtInterest',
+      'cooperative',
+      'distracted',
+      'sophisticatedInArt',
+      'sadhappy1',
+      'sadhappy2',
+      'sadhappy3']
     ]
   );
   // await boldFirstRowAndColumn(overallSheet.spreadsheetId);
@@ -203,27 +253,75 @@ async function deleteAllFiles() {
 }
 
 async function processSurvey(survey) {
-  const { personality, selectedMovies, reviewOverall, sadhappy1, sadhappy2, sadhappy3 } = survey;
+  const { personality, selectedMovies, reviewOverall, sadhappy1, sadhappy2, sadhappy3, mostAsked, email } = survey;
   const userId = uniqid();
+
+  // console.log(survey);
 
   await insertRows(
     ((await createSpreadsheet(userId)).spreadsheetId),
     [
-      [''].concat(symbols.allRatingStyles).concat(['reviewOverall', 'chosenRatings']),
-      ...selectedMovies.map(m => [m.name].concat(symbols.allRatingStyles.map(r => m[r])).concat([reviewOverall]).concat([m.chosenRatings.join(',')]) )
+      [''].concat(symbols.allRatingStyles).concat(['reviewOverall', 'chosenRatings', 'mostAsked', 'email']),
+      ...selectedMovies.map(m => [m.name].concat(symbols.allRatingStyles.map(r => m[r])).concat([reviewOverall]).concat([m.chosenRatings.join(',')]).concat([mostAsked]).concat([email]) )
     ]
   );
-
+ 
   await insertRows(
     (await getOverallTableId()),
     [
       [
         userId,
-        ...['talkative','faultWithOthers','thoroughJob','depressed'].map(i => personality[i]),
+        ...[
+        'talkative',
+        'faultWithOthers',
+        'thoroughJob',
+        'depressed',
+        'original',
+        'reserved',
+        'helpful',
+        'careless',
+        'relaxed',
+        'curious',
+        'energy',
+        'quarrels',
+        'reliable',
+        'tense',
+        'deepThinker',
+        'enthusiasm',
+        'forgiving',
+        'disorganized',
+        'worried',
+        'activeImagination',
+        'quiet',
+        'trusting',
+        'lazy',
+        'upset',
+        'inventive',
+        'assertive',
+        'coldAloof',
+        'perseverence',
+        'moody',
+        'artistic',
+        'shy',
+        'kind',
+        'efficient',
+        'calm',
+        'routineWork',
+        'outgoing',
+        'rude',
+        'makePlans',
+        'nervous',
+        'reflective',
+        'fewArtInterest',
+        'cooperative',
+        'distracted',
+        'sophisticatedInArt'
+        ].map(i => personality[i]),
         sadhappy1,
         sadhappy2,
         sadhappy3
-      ]
+      ] 
+
     ]
   );
 }
