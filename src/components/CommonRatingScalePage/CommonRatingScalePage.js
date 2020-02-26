@@ -21,7 +21,7 @@ class CommonRatingScalePage extends React.Component {
     }
 
     this.handleNext = () => {
-      survey.get().reviewOverall = this.state.choice;
+      survey.get().mostAsked = this.state.choice;
       this.props.history.replace(`/explainreview`);
     }
   }
