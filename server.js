@@ -188,9 +188,23 @@ async function getOverallTableId() {
       'cooperative',
       'distracted',
       'sophisticatedInArt',
-      'sadhappy1',
-      'sadhappy2',
-      'sadhappy3']
+      'positiveEff1',
+      'positiveEff2',
+      'positiveEff3',
+      'positiveEff4',
+      'positiveEff5',
+      'negativeEff1',
+      'negativeEff2',
+      'negativeEff3',
+      'negativeEff4',
+      'negativeEff5',
+      'negativeEff6',
+      'otherEff1',
+      'otherEff2',
+      'otherEff3',
+      'otherEff4',
+      'otherEff5',
+      ]
     ]
   );
   // await boldFirstRowAndColumn(overallSheet.spreadsheetId);
@@ -253,7 +267,7 @@ async function deleteAllFiles() {
 }
 
 async function processSurvey(survey) {
-  const { personality, selectedMovies, reviewOverall, sadhappy1, sadhappy2, sadhappy3, mostAsked, email } = survey;
+  const { personality, selectedMovies, reviewOverall, mostAsked, email } = survey;
   const userId = uniqid();
 
   // console.log(survey);
@@ -315,11 +329,24 @@ async function processSurvey(survey) {
         'fewArtInterest',
         'cooperative',
         'distracted',
-        'sophisticatedInArt'
-        ].map(i => personality[i]),
-        sadhappy1,
-        sadhappy2,
-        sadhappy3
+        'sophisticatedInArt',
+        'positiveEff1',
+        'positiveEff2',
+        'positiveEff3',
+        'positiveEff4',
+        'positiveEff5',
+        'negativeEff1',
+        'negativeEff2',
+        'negativeEff3',
+        'negativeEff4',
+        'negativeEff5',
+        'negativeEff6',
+        'otherEff1',
+        'otherEff2',
+        'otherEff3',
+        'otherEff4',
+        'otherEff5'
+        ].map(i => personality[i])
       ] 
 
     ]

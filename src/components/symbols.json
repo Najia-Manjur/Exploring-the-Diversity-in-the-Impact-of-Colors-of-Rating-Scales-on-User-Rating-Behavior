@@ -1,6 +1,6 @@
 {
-    "allRatingStyles": ["commonRate","color-circle","color-star","color-emoji","circle","emoji"],
-    "ratingStyles": ["color-circle","color-star","color-emoji","circle","emoji"],
+    "allRatingStyles": ["commonRate","color-circle","color-star","color-emoji","circle","emoji","color-personality"],
+    "ratingStyles": ["color-circle","color-star","color-emoji","circle","emoji", "color-personality"],
     "commonRate": {
         "empty": [
             "fa fa-star-o fa-2x survey-yellow",
@@ -95,6 +95,22 @@
             "fas fa-meh fa-2x survey-blue",
             "fas fa-smile fa-2x survey-blue",
             "fas fa-grin fa-2x survey-blue"
+        ]
+    },
+    "color-personality":{ 
+        "empty":[ 
+            "fa fa-star-o fa-2x survey-darkred",
+            "fa fa-star-o fa-2x survey-red",
+            "fa fa-star-o fa-2x survey-orange",
+            "fa fa-star-o fa-2x survey-blue",
+            "fa fa-star-o fa-2x survey-darkblue"
+        ],
+        "full":[ 
+            "fa fa-star fa-2x survey-darkred",
+            "fa fa-star fa-2x survey-red",
+            "fa fa-star fa-2x survey-orange",
+            "fa fa-star fa-2x survey-blue",
+            "fa fa-star fa-2x survey-darkblue"
         ]
     }
 }

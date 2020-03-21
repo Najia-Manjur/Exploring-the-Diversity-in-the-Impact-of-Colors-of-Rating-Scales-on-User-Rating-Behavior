@@ -5,7 +5,8 @@ import { Beforeunload } from 'react-beforeunload';
 import Demographics from "./components/Demographics/Demographics";
 import ConsentPage from "./components/ConsentPage/ConsentPage";
 import PersonalityPage from "./components/PersonalityPage/PersonalityPage";
-import SadHappyPage from "./components/SadHappyPage/SadHappyPage";
+// import MoodPage from "./components/MoodPage/MoodPage";
+// import SadHappyPage from "./components/SadHappyPage/SadHappyPage";
 import CommonRatePage from "./components/CommonRatePage/CommonRatePage";
 import CommonRatingScalePage from "./components/CommonRatingScalePage/CommonRatingScalePage";
 import ExplainReviewPage from "./components/ExplainReviewPage/ExplainReviewPage";
@@ -69,6 +70,22 @@ const _personality = obj({
   cooperative: num,
   distracted: num,
   sophisticatedInArt: num,
+  positiveEff1: num,
+  positiveEff2: num,
+  positiveEff3: num,
+  positiveEff4: num,
+  positiveEff5: num,
+  negativeEff1: num,
+  negativeEff2: num,
+  negativeEff3: num,
+  negativeEff4: num,
+  negativeEff5: num,
+  negativeEff6: num,
+  otherEff1: num,
+  otherEff2: num,
+  otherEff3: num,
+  otherEff4: num,
+  otherEff5: num,
   age: num,
   gender: string().required(),
   country: string().required()
@@ -77,6 +94,7 @@ const _personality = obj({
 const _movie = array().of(obj({
   "name": str,
   "img": str
+  // "watched": str
 })).min(0);
 
 const _navSeq = array().of(obj({
@@ -118,8 +136,8 @@ const sadHappy1Schema = obj({
 const commonSchema = obj({
   personality: _personality,
   selectedMovies: _movie,
-  navSequence: _navSeq,
-  sadhappy1: str
+  navSequence: _navSeq
+  // sadhappy1: str
 });
 
 const rateSchema = commonSchema;
@@ -128,9 +146,9 @@ const sadHappy2Schema = commonSchema;
 
 const reviewoverallSchema = obj({
   personality: _personality,
-  selectedMovies: _ratedMovie,
-  sadhappy1: str,
-  sadhappy2: str
+  selectedMovies: _ratedMovie
+  // sadhappy1: str,
+  // sadhappy2: str
 });
 
 const sadHappy3Schema = reviewoverallSchema;
@@ -139,10 +157,10 @@ const reviewEachSchema = obj({
   personality: _personality,
   selectedMovies: _ratedMovie,
   reviewOverall: _reviewOverall,
-  reviewSequence : _reviewSeq,
-  sadhappy1: str,
-  sadhappy2: str,
-  sadhappy3: str
+  reviewSequence : _reviewSeq
+  // sadhappy1: str,
+  // sadhappy2: str,
+  // sadhappy3: str
 });
 
 const explainReviewSchema = reviewEachSchema;
@@ -150,10 +168,10 @@ const explainReviewSchema = reviewEachSchema;
 const emailSchema = obj({
   personality: _personality,
   selectedMovies: _reviewedMovie,
-  reviewOverall: _reviewOverall,
-  sadhappy1: str,
-  sadhappy2: str,
-  sadhappy3: str
+  reviewOverall: _reviewOverall
+  // sadhappy1: str,
+  // sadhappy2: str,
+  // sadhappy3: str
 });
 
 const askEmailSchema = emailSchema;
@@ -242,9 +260,6 @@ export default class App extends React.Component {
             <Route exact path="/demographics" component={Demographics} />
             <Route exact path="/info" component={PersonalityPage} />
             <Route exact path="/error" component={ErrorPage} />
-            <RestrictedRoute exact path="/sadhappy1" component={SadHappyPage} />
-            <RestrictedRoute exact path="/sadhappy2" component={SadHappyPage} />
-            <RestrictedRoute exact path="/sadhappy3" component={SadHappyPage} />
             <RestrictedRoute exact path="/common" component={CommonRatePage} />
             <RestrictedRoute exact path="/reviewoverall" component={ReviewoverallPage} />
             <Route exact path="/commonratingscalepage" component={CommonRatingScalePage} />

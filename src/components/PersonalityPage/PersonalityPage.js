@@ -53,9 +53,27 @@ class PersonalityPage extends React.Component {
       cooperative: dot.get(survey.get(), 'personality.cooperative', 0),
       distracted: dot.get(survey.get(), 'personality.distracted', 0),
       sophisticatedInArt: dot.get(survey.get(), 'personality.sophisticatedInArt', 0),
+      positiveEff1: dot.get(survey.get(), 'personality.positiveEff1', 0),
+      positiveEff2: dot.get(survey.get(), 'personality.positiveEff2', 0),
+      positiveEff3: dot.get(survey.get(), 'personality.positiveEff3', 0),
+      positiveEff4: dot.get(survey.get(), 'personality.positiveEff4', 0),
+      positiveEff5: dot.get(survey.get(), 'personality.positiveEff5', 0),
+      negativeEff1: dot.get(survey.get(), 'personality.negativeEff1', 0),
+      negativeEff2: dot.get(survey.get(), 'personality.negativeEff2', 0),
+      negativeEff3: dot.get(survey.get(), 'personality.negativeEff3', 0),
+      negativeEff4: dot.get(survey.get(), 'personality.negativeEff4', 0),
+      negativeEff5: dot.get(survey.get(), 'personality.negativeEff5', 0),
+      negativeEff6: dot.get(survey.get(), 'personality.negativeEff6', 0),
+      otherEff1: dot.get(survey.get(), 'personality.otherEff1', 0),
+      otherEff2: dot.get(survey.get(), 'personality.otherEff2', 0),
+      otherEff3: dot.get(survey.get(), 'personality.otherEff3', 0),
+      otherEff4: dot.get(survey.get(), 'personality.otherEff4', 0),
+      otherEff5: dot.get(survey.get(), 'personality.otherEff5', 0),
       age: survey.get().personality.age,
       gender: survey.get().personality.gender,
-      country: survey.get().personality.country
+      country: survey.get().personality.country,
+
+      page: 1
     };
 
     this.handleChange = event => {
@@ -66,21 +84,35 @@ class PersonalityPage extends React.Component {
     }
 
     this.handleNext = () => {
-      survey.get().personality = utils.clone(this.state);
-      console.log(survey.get().personality)
-      //this.props.history.replace("/sadhappy1"); //
 
+      let pageNo = this.state.page;
+      let pageItems = {
+        1: ['talkative', 'faultWithOthers','thoroughJob','depressed','original','reserved','helpful','careless','relaxed','curious','energy','quarrels','reliable','tense','deepThinker','enthusiasm','forgiving','disorganized','worried','activeImagination','quiet','trusting'],
+        2: ['lazy', 'upset','inventive','assertive','coldAloof','perseverence','moody','artistic','shy','kind','efficient','calm','routineWork','outgoing','rude','makePlans','nervous','reflective','fewArtInterest','cooperative','distracted','sophisticatedInArt'],
+        3: ['positiveEff1', 'positiveEff2','positiveEff3','positiveEff4','positiveEff5','negativeEff1','negativeEff2','negativeEff3','negativeEff4','negativeEff5','negativeEff6','otherEff1','otherEff2','otherEff3','otherEff4','otherEff5']
+      }  
+
+      let key;
       let isAll = true;
-      Object.values(survey.get().personality).forEach((value) => {
-        if (value == 0)    
+      for (key of pageItems[pageNo]) {
+        if (this.state[key] == 0)
           isAll = false;
-      });
+      }
 
-      if (isAll)  
-        this.props.history.replace("/sadhappy1");
-      else
-        alert("Please answer all questions");
+      if(isAll)
+        alert("Please answer all questions.");
+      else {
+        if (pageNo == 3) {
+          survey.get().personality = utils.clone(this.state);
+          this.props.history.replace("/common");
+        } else {
+          this.setState({
+            page: pageNo + 1
+          });  
+        }
+      }
     }
+
   }
 
   render() {
@@ -92,13 +124,16 @@ class PersonalityPage extends React.Component {
         </td>
       )
     }
-    return (
-      <div className="vertical-center">
-        <Container>
+
+    let pageDesc = (
+        <div>  
           <p> Here are a number of characteristics that may or may not apply to you. For example, do you agree that you are someone who likes to spend time with others? Please select a box next to each statement to indicate the extent to which you agree or disagree with that statement. </p>
           <br/>
           <p> I see myself as someone who… </p>
-          <table border="0" cellPadding="10">
+        </div>  
+    );
+
+    let page = (
             <tbody>
               <tr>
                 <th></th>
@@ -196,6 +231,20 @@ class PersonalityPage extends React.Component {
                 <td>Is generally trusting</td>
                 { radioRow("trusting") }
               </tr>
+            </tbody>
+          );
+
+    if (this.state.page == 2)
+      page = (
+            <tbody>
+              <tr>
+                <th></th>
+                <th>Disagree Strongly</th>
+                <th>Disagree a little</th>
+                <th>Neither agree nor disagree</th>
+                <th>Agree a little</th>
+                <th>Agree Strongly</th>
+              </tr>
               <tr>
                 <td>Tends to be lazy</td>
                 { radioRow("lazy") }
@@ -285,6 +334,102 @@ class PersonalityPage extends React.Component {
                 { radioRow("sophisticatedInArt") }
               </tr>
             </tbody>
+          );
+
+    if (this.state.page == 3) {
+
+      pageDesc = (
+        <div>  
+          <p> This scale consists of a number of words and phrases that describe different feelings and emotions. Read each item and then
+mark the appropriate answer in the space next to that word. Indicate to what extent you have felt this way today. Use the following scale to record your answers:</p>
+          <br/>
+        </div>  
+      );
+
+      page = (
+            <tbody>
+              <tr>
+                <th></th>
+                <th>Very slightly or not at all</th>
+                <th>A little</th>
+                <th>Moderately</th>
+                <th>Quite a bit</th>
+                <th>Extremely</th>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                { radioRow("positiveEff1") }
+              </tr>
+              <tr>
+                <td>Excited</td>
+                { radioRow("positiveEff2") }
+              </tr>
+              <tr>
+                <td>Interested</td>
+                { radioRow("positiveEff3") }
+              </tr>
+              <tr>
+                <td>Proud</td>
+                { radioRow("positiveEff4") }
+              </tr>
+              <tr>
+                <td>Confident</td>
+                { radioRow("positiveEff5") }
+              </tr>
+              <tr>
+                <td>Sad</td>
+                { radioRow("negativeEff1") }
+              </tr>
+              <tr>
+                <td>Nervous</td>
+                { radioRow("negativeEff2") }
+              </tr>
+              <tr>
+                <td>Angry</td>
+                { radioRow("negativeEff3") }
+              </tr>
+              <tr>
+                <td>Afraid</td>
+                { radioRow("negativeEff4") }
+              </tr>
+              <tr>
+                <td>Lonely</td>
+                { radioRow("negativeEff5") }
+              </tr>
+              <tr>
+                <td>Dissatisfied with self</td>
+                { radioRow("negativeEff6") }
+              </tr>
+              <tr>
+                <td>Sleepy</td>
+                { radioRow("otherEff1") }
+              </tr>
+              <tr>
+                <td>Tired</td>
+                { radioRow("otherEff2") }
+              </tr>
+              <tr>
+                <td>Relaxed</td>
+                { radioRow("otherEff3") }
+              </tr>
+              <tr>
+                <td>Surprised</td>
+                { radioRow("otherEff4") }
+              </tr>
+              <tr>
+                <td>Calm</td>
+                { radioRow("otherEff5") }
+              </tr>
+            </tbody>
+      );
+    }
+
+    return (
+      <div className="vertical-center">
+        <Container>
+          {pageDesc}
+          <table border="0" cellPadding="10">
+            {page}
           </table>
           <Button style={{"float":"right"}} onClick={this.handleNext}>Next</Button>
         </Container>

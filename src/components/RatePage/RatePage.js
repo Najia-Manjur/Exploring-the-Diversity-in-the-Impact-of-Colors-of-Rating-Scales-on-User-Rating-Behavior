@@ -30,17 +30,17 @@ class RatePage extends React.Component {
         return alert("Please rate the movie");
       }
 
-      if (survey.get().navSequence.length ===
-          (survey.get().selectedMovies.length * symbols.ratingStyles.length) / 2) {
-          return this.props.history.replace(`/sadhappy2`);
-        }
+      // if (survey.get().navSequence.length ===
+      //     (survey.get().selectedMovies.length * symbols.ratingStyles.length) / 2) {
+      //     return this.props.history.replace(`/sadhappy2`);
+      //   }
 
       if (survey.get().navSequence.length > 0) {
         const { movieid, ratingstyle } = survey.get().navSequence.pop();
         return this.props.history.replace(`/rate/${movieid}/${ratingstyle}`);
       }
 
-      return this.props.history.replace(`/sadhappy3`);
+      return this.props.history.replace(`/reviewoverall`);
     }
   }
 
@@ -49,13 +49,13 @@ class RatePage extends React.Component {
     const {name, img} = survey.get().selectedMovies[m];
     const rated = survey.get().selectedMovies[m][r];
 
-    let movie_number = 50 - survey.get().navSequence.length;
+    let movie_number = 60 - survey.get().navSequence.length;
 
     return (
       <div className="text-center">
         <Container>
           <h6></h6>
-          <p>{movie_number + " of " + 50 }</p>
+          <p>{movie_number + " of " + 60 }</p>
           <p>Please rate the movie: </p>
           <img src={img} alt="Poster" height="400" width="240" />
           <h6>{name}</h6>

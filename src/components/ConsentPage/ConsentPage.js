@@ -42,10 +42,20 @@ class ConsentPage extends React.Component {
             
             <p>Julita Vassileva, Department of Computer Science, University of Saskatchewan, email: <a href="mailto: jiv@cs.usask.ca"> jiv@cs.usask.ca</a></p>
             
-            <h5>Objective of the Study</h5>
-            <p>The study may contribute to the general research area of Human Computer Interaction (HCI), Recommender Systems and
-            Personalization. We have designed a survey that will take approximately 20 minutes and we invite you to respond to it by using 
-            our system interface. The questionnaire will be presented to you after giving your consent to participate in the study.</p>
+            <h5>Purpose and Objective of the Study</h5>
+            <p>The goal of this research is to find out if users’ demographics, personality, mood and the design of
+            rating scales have an impact on their rating behavior. The study may contribute to the general
+            research area of Human Computer Interaction (HCI), Recommender Systems and
+            Personalization. We have designed a survey that will take approximately 20 minutes and we
+            invite you to respond to it by using our system interface. The questionnaire will be presented to
+            you after after giving your consent to participate in the study.</p>
+            <h5>Procedure</h5>
+            <p>An online experiment platform is implemented to conduct the user study. The study will
+            start with a survey to collect the participants’ demographic data including gender, age and
+            home country. In the study, the participants will respond
+            to the questionnaire from the Big Five Inventory (BFI, 44 items) and PANAS X in order to assess their
+            personality traits and mood on a 5-point Likert scale. Then they will be asked to rate 10 movies using different
+            rating scale interfaces. The study will conclude with a survey to collect feedback on the design of the rating scales.</p>
             <h5>Confidentiality</h5>
             <p>
               To protect the anonymity and confidentiality of a participant, all the collected information

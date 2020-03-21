@@ -9,12 +9,26 @@ class CommonRatePage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleChange = mi => r => {
+    this.state = {
+      changeCounter: 0 // just using to refresh the state
+      // watched: null
+    };
+
+    this.handleChange = (mi) => r => {
       survey.get().selectedMovies[mi].commonRate = r;
     }
 
+    this.handleChangeWatched = (mi, event) => {
+      const { name, value } = event.target;
+      survey.get().selectedMovies[mi].watched = value;
+      // console.log(survey.get().selectedMovies[mi]);
+      this.setState({
+        changeCounter: this.changeCounter + 1
+      });
+    }
+
     this.handleNext = () => {
-      if (survey.get().selectedMovies.filter(m => typeof m.commonRate !== 'number').length > 0) {
+      if (survey.get().selectedMovies.filter(m => typeof m.commonRate !== 'number' || m.watched !== 'string').length > 0) {
         return alert("Please rate all the movies");
       }
       const { movieid, ratingstyle } = survey.get().navSequence.pop();
@@ -30,7 +44,6 @@ class CommonRatePage extends React.Component {
   }
 
   render() {
-
     return (
       <div>
         <Container>
@@ -45,7 +58,9 @@ class CommonRatePage extends React.Component {
               survey.get()
                 .selectedMovies
                 .map((m, i) => {
-                  const {name, img, commonRate} = m;
+                  const {name, img, commonRate, watched} = m;
+                  // console.log(commonRate);
+                  // console.log("watched " + watched);
                   return <ListGroup.Item key={i}>
                     <img src={img} alt="Poster" height="400" width="240" /> <br/>
                     <h6> {name} </h6>
@@ -56,6 +71,13 @@ class CommonRatePage extends React.Component {
                         fullSymbol={symbols.commonRate.full}
                         onChange={this.handleChange(i)}
                       />
+                      <p>Have you watched this movie?</p>
+                      <input type="radio" id="yes" name={"watched-" + name} value="yes" checked={watched === "yes"} onChange={this.handleChangeWatched.bind(this, i)} />
+                      <label>Yes</label>
+                      <br/>
+                      <input type="radio" id="no" name={"watched-" + name} value="no" checked={watched === "no"} onChange={this.handleChangeWatched.bind(this, i)} />
+                      <label>No</label>
+                      <br/>
                   </ListGroup.Item>
                 })
             }
