@@ -48,7 +48,7 @@ class ConsentPage extends React.Component {
             research area of Human Computer Interaction (HCI), Recommender Systems and
             Personalization. We have designed a survey that will take approximately 20 minutes and we
             invite you to respond to it by using our system interface. The questionnaire will be presented to
-            you after after giving your consent to participate in the study.</p>
+            you after giving your consent to participate in the study.</p>
             <h5>Procedure</h5>
             <p>An online experiment platform is implemented to conduct the user study. The study will
             start with a survey to collect the participants’ demographic data including gender, age and

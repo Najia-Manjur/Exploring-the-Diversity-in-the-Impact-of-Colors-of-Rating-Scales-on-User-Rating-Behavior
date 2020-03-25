@@ -191,18 +191,15 @@ async function getOverallTableId() {
       'positiveEff1',
       'positiveEff2',
       'positiveEff3',
-      'positiveEff4',
       'positiveEff5',
       'negativeEff1',
       'negativeEff2',
       'negativeEff3',
       'negativeEff4',
-      'negativeEff5',
       'negativeEff6',
       'otherEff1',
       'otherEff2',
       'otherEff3',
-      'otherEff4',
       'otherEff5',
       ]
     ]
@@ -333,18 +330,15 @@ async function processSurvey(survey) {
         'positiveEff1',
         'positiveEff2',
         'positiveEff3',
-        'positiveEff4',
         'positiveEff5',
         'negativeEff1',
         'negativeEff2',
         'negativeEff3',
         'negativeEff4',
-        'negativeEff5',
         'negativeEff6',
         'otherEff1',
         'otherEff2',
         'otherEff3',
-        'otherEff4',
         'otherEff5'
         ].map(i => personality[i])
       ] 

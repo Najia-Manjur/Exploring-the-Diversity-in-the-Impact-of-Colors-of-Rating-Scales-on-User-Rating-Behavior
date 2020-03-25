@@ -56,18 +56,15 @@ class PersonalityPage extends React.Component {
       positiveEff1: dot.get(survey.get(), 'personality.positiveEff1', 0),
       positiveEff2: dot.get(survey.get(), 'personality.positiveEff2', 0),
       positiveEff3: dot.get(survey.get(), 'personality.positiveEff3', 0),
-      positiveEff4: dot.get(survey.get(), 'personality.positiveEff4', 0),
       positiveEff5: dot.get(survey.get(), 'personality.positiveEff5', 0),
       negativeEff1: dot.get(survey.get(), 'personality.negativeEff1', 0),
       negativeEff2: dot.get(survey.get(), 'personality.negativeEff2', 0),
       negativeEff3: dot.get(survey.get(), 'personality.negativeEff3', 0),
       negativeEff4: dot.get(survey.get(), 'personality.negativeEff4', 0),
-      negativeEff5: dot.get(survey.get(), 'personality.negativeEff5', 0),
       negativeEff6: dot.get(survey.get(), 'personality.negativeEff6', 0),
       otherEff1: dot.get(survey.get(), 'personality.otherEff1', 0),
       otherEff2: dot.get(survey.get(), 'personality.otherEff2', 0),
       otherEff3: dot.get(survey.get(), 'personality.otherEff3', 0),
-      otherEff4: dot.get(survey.get(), 'personality.otherEff4', 0),
       otherEff5: dot.get(survey.get(), 'personality.otherEff5', 0),
       age: survey.get().personality.age,
       gender: survey.get().personality.gender,
@@ -89,7 +86,7 @@ class PersonalityPage extends React.Component {
       let pageItems = {
         1: ['talkative', 'faultWithOthers','thoroughJob','depressed','original','reserved','helpful','careless','relaxed','curious','energy','quarrels','reliable','tense','deepThinker','enthusiasm','forgiving','disorganized','worried','activeImagination','quiet','trusting'],
         2: ['lazy', 'upset','inventive','assertive','coldAloof','perseverence','moody','artistic','shy','kind','efficient','calm','routineWork','outgoing','rude','makePlans','nervous','reflective','fewArtInterest','cooperative','distracted','sophisticatedInArt'],
-        3: ['positiveEff1', 'positiveEff2','positiveEff3','positiveEff4','positiveEff5','negativeEff1','negativeEff2','negativeEff3','negativeEff4','negativeEff5','negativeEff6','otherEff1','otherEff2','otherEff3','otherEff4','otherEff5']
+        3: ['positiveEff1', 'positiveEff2','positiveEff3','positiveEff5','negativeEff1','negativeEff2','negativeEff3','negativeEff4','negativeEff6','otherEff1','otherEff2','otherEff3','otherEff5']
       }  
 
       let key;
@@ -108,6 +105,7 @@ class PersonalityPage extends React.Component {
           survey.get().personality = utils.clone(this.state);
           this.props.history.replace("/common");
         } else {
+          document.body.scrollTop = document.documentElement.scrollTop = 0;
           this.setState({
             page: pageNo + 1
           });  
@@ -342,7 +340,7 @@ class PersonalityPage extends React.Component {
 
       pageDesc = (
         <div>  
-          <p> This scale consists of a number of words and phrases that describe different feelings and emotions. Read each item and then
+          <p> Here are a number of words and phrases that describe different feelings and emotions. Read each item and then
 mark the appropriate answer in the space next to that word. Indicate to what extent you have felt this way today. Use the following scale to record your answers:</p>
           <br/>
         </div>  
@@ -371,10 +369,6 @@ mark the appropriate answer in the space next to that word. Indicate to what ext
                 { radioRow("positiveEff3") }
               </tr>
               <tr>
-                <td>Proud</td>
-                { radioRow("positiveEff4") }
-              </tr>
-              <tr>
                 <td>Confident</td>
                 { radioRow("positiveEff5") }
               </tr>
@@ -395,10 +389,6 @@ mark the appropriate answer in the space next to that word. Indicate to what ext
                 { radioRow("negativeEff4") }
               </tr>
               <tr>
-                <td>Lonely</td>
-                { radioRow("negativeEff5") }
-              </tr>
-              <tr>
                 <td>Dissatisfied with self</td>
                 { radioRow("negativeEff6") }
               </tr>
@@ -413,10 +403,6 @@ mark the appropriate answer in the space next to that word. Indicate to what ext
               <tr>
                 <td>Relaxed</td>
                 { radioRow("otherEff3") }
-              </tr>
-              <tr>
-                <td>Surprised</td>
-                { radioRow("otherEff4") }
               </tr>
               <tr>
                 <td>Calm</td>

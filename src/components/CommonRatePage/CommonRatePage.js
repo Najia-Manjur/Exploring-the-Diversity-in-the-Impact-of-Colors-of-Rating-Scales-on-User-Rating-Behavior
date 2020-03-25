@@ -28,7 +28,22 @@ class CommonRatePage extends React.Component {
     }
 
     this.handleNext = () => {
-      if (survey.get().selectedMovies.filter(m => typeof m.commonRate !== 'number' || m.watched !== 'string').length > 0) {
+      if (survey.get().selectedMovies.filter(m => typeof m.commonRate !== 'number' || typeof m.watched !== 'string').length > 0) {
+        // console.log(survey.get().selectedMovies.filter(m => typeof m.commonRate !== 'number' || m.watched !== 'string'));
+      //   survey.get().selectedMovies.filter(m => {
+      //     console.log(m.name);
+      //     console.log(m.commonRate);
+      //     console.log(m.watched);
+
+      //     console.log(typeof(m.commonRate) !== 'number');
+      //     console.log(typeof(m.commonRate));
+
+      //     console.log(typeof(m.watched) !== 'string');
+      //     console.log(typeof(m.watched));
+
+      //     return typeof m.commonRate !== 'number' || m.watched !== 'string'
+      //   });
+
         return alert("Please rate all the movies");
       }
       const { movieid, ratingstyle } = survey.get().navSequence.pop();
@@ -83,7 +98,7 @@ class CommonRatePage extends React.Component {
             }
           </ListGroup>
           <br/>
-          <p>In the next page, you will be asked to rate these movies again using multiple scales. You do not have to
+          <p>From the next page onwards, you will be asked to rate these movies again using multiple scales. You do not have to
           remember the exact rating you gave here for every movie, just go with the flow and rate what you feel like!</p>
           <Button style={{"float":"right"}} onClick={this.handleNext}>Next</Button>
         </Container>
