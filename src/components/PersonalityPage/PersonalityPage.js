@@ -95,11 +95,13 @@ class PersonalityPage extends React.Component {
       let key;
       let isAll = true;
       for (key of pageItems[pageNo]) {
-        if (this.state[key] == 0)
+        if (this.state[key] == 0) {
           isAll = false;
+          console.log("Did not find " + key);
+        }
       }
 
-      if(isAll)
+      if(!isAll)
         alert("Please answer all questions.");
       else {
         if (pageNo == 3) {
