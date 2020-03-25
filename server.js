@@ -280,7 +280,7 @@ async function processSurvey(survey) {
   await insertRows(
     ((await createSpreadsheet(userId)).spreadsheetId),
     [
-      ['watched'].concat(symbols.allRatingStyles).concat(['reviewOverall', 'chosenRatings', 'mostAsked', 'email']),
+      ['name', 'watched'].concat(symbols.allRatingStyles).concat(['reviewOverall', 'chosenRatings', 'mostAsked', 'email']),
       ...selectedMovies.map(m => [m.name, m.watched].concat(symbols.allRatingStyles.map(r => m[r])).concat([reviewOverall]).concat([m.chosenRatings.join(',')]).concat([mostAsked]).concat([email]) )
     ]
   );
