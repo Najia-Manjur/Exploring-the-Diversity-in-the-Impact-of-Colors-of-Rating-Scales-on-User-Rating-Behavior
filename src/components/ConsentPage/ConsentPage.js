@@ -31,7 +31,7 @@ class ConsentPage extends React.Component {
       <div className="vertical-center">
         <Container>
           <div>
-            <center><h4>Survey nam_usask</h4></center>
+            <center><h4>Consent Form</h4></center>
             
             <h5>Researchers</h5>
             <ul>

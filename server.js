@@ -135,11 +135,16 @@ async function listFiles() {
 }
 
 async function getOverallTableId() {
-  const filesFiltered = (await listFiles()).filter( ({ name }) => name === 'Overall' );
+  const filesFiltered = (await listFiles()).filter( ({ name }) => name === 'Overall_Data');
+
+  console.log("Already has spreadsheets");
+
   if (filesFiltered.length !== 0) {
+    console.log("Id: " + filesFiltered[0].id);
     return filesFiltered[0].id;
   }
-  const overallSheet = await createSpreadsheet('Overall');
+  console.log("Creating new spreadsheets");
+  const overallSheet = await createSpreadsheet('Overall_Data');
   await insertRows(overallSheet.spreadsheetId,
     [
       [
@@ -279,7 +284,75 @@ async function processSurvey(survey) {
       ...selectedMovies.map(m => [m.name].concat(symbols.allRatingStyles.map(r => m[r])).concat([reviewOverall]).concat([m.chosenRatings.join(',')]).concat([mostAsked]).concat([email]) )
     ]
   );
- 
+  
+  console.log([[
+        userId,
+        ...[
+        'talkative',
+        'faultWithOthers',
+        'thoroughJob',
+        'depressed',
+        'original',
+        'reserved',
+        'helpful',
+        'careless',
+        'relaxed',
+        'curious',
+        'energy',
+        'quarrels',
+        'reliable',
+        'tense',
+        'deepThinker',
+        'enthusiasm',
+        'forgiving',
+        'disorganized',
+        'worried',
+        'activeImagination',
+        'quiet',
+        'trusting',
+        'lazy',
+        'upset',
+        'inventive',
+        'assertive',
+        'coldAloof',
+        'perseverence',
+        'moody',
+        'artistic',
+        'shy',
+        'kind',
+        'efficient',
+        'calm',
+        'routineWork',
+        'outgoing',
+        'rude',
+        'makePlans',
+        'nervous',
+        'reflective',
+        'fewArtInterest',
+        'cooperative',
+        'distracted',
+        'sophisticatedInArt',
+        'positiveEff1',
+        'positiveEff2',
+        'positiveEff3',
+        'positiveEff5',
+        'negativeEff1',
+        'negativeEff2',
+        'negativeEff3',
+        'negativeEff4',
+        'negativeEff6',
+        'otherEff1',
+        'otherEff2',
+        'otherEff3',
+        'otherEff5',
+        'age',
+        'gender',
+        'country'
+        ].map(i => personality[i])
+      ] 
+    ]
+  );
+
   await insertRows(
     (await getOverallTableId()),
     [

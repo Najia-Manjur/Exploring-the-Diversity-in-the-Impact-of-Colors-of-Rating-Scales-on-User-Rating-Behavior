@@ -86,6 +86,7 @@ class CommonRatePage extends React.Component {
                         fullSymbol={symbols.commonRate.full}
                         onChange={this.handleChange(i)}
                       />
+                      <p></p>
                       <p>Have you watched this movie?</p>
                       <input type="radio" id="yes" name={"watched-" + name} value="yes" checked={watched === "yes"} onChange={this.handleChangeWatched.bind(this, i)} />
                       <label>Yes</label>

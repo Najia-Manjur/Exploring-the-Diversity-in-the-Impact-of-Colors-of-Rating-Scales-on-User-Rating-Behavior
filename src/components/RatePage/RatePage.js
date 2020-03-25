@@ -69,8 +69,9 @@ class RatePage extends React.Component {
             />
           }
           <br/>
+          <p></p>
           <span>
-            <Button style={{"float":"right"}} onClick={this.handleNav}>Next</Button>
+            <Button style={{"float":"center"}} onClick={this.handleNav}>Next</Button>
           </span>
         </Container>
       </div>

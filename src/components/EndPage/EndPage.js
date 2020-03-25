@@ -6,7 +6,9 @@ class EndPage extends React.Component {
     return (
       <div>
         <Container>
-          <h5> Thanks for your participation! </h5>
+          <p></p>
+          <p></p>
+          <center><h5> Thank you for your participation! </h5></center>
         </Container>
       </div>
     );
