@@ -201,6 +201,9 @@ async function getOverallTableId() {
       'otherEff2',
       'otherEff3',
       'otherEff5',
+      'age',
+      'gender',
+      'country'
       ]
     ]
   );
@@ -339,7 +342,10 @@ async function processSurvey(survey) {
         'otherEff1',
         'otherEff2',
         'otherEff3',
-        'otherEff5'
+        'otherEff5',
+        'age',
+        'gender',
+        'country'
         ].map(i => personality[i])
       ] 
 
