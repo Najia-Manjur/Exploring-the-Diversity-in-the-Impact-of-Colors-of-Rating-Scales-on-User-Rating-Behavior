@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container } from "react-bootstrap";
 import FormRow from "../FormRow";
 import survey from "../../Data/survey";
+import AsyncAwareContainer from "../AsyncAwareContainer";
 import api from "../../Data/api";
 
 class EmailPage extends React.Component {
@@ -40,14 +41,14 @@ class EmailPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <AsyncAwareContainer loading={this.state.loading}>
         <Container>
           <h6> Please provide your email ID to participate in the raffle draw selection: </h6>
           <br/><br/>
           <FormRow name="email" onChange={this.handleChange} />
           <Button style={{"float":"right"}} onClick={this.handleSubmit}>Submit</Button>
         </Container>
-      </div>
+      </AsyncAwareContainer>
     );
   }
 }
