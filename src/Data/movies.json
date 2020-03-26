@@ -1,47 +1,47 @@
 [{
 		"name": "Joker (2019)",
-		"img": "https://en.wikipedia.org/wiki/Joker_(2019_film)#/media/File:Joker_(2019_film)_poster.jpg"
+		"img": "img/Joker.jpg"
 	},
 	{
 		"name": "Gone Girl(2014)",
-		"img": "https://upload.wikimedia.org/wikipedia/en/0/05/Gone_Girl_Poster.jpg"
+		"img": "img/gone_girl.jpg"
 	},
 	{
 		"name": "Deadpool(2016)",
-		"img": "https://www.dvd-trailers.gr/dvd/deadpool_2016.jpg"
+		"img": "img/Deadpool.png"
 	},
 	{
 		"name": "Aladdin (2019)",
-		"img": "https://upload.wikimedia.org/wikipedia/en/9/9a/Aladdin_%28Official_2019_Film_Poster%29.png"
+		"img": "img/Aladdin.png"
 	},
 
 	{
 		"name": "Captain Marvel (2019)",
-		"img": "https://upload.wikimedia.org/wikipedia/en/8/85/Captain_Marvel_poster.jpg"
+		"img": "img/Captain_Marvel.jpg"
 	},
 
 	{
 		"name": "Bird Box(2018)",
-		"img": "https://upload.wikimedia.org/wikipedia/en/b/bd/Bird_Box_%28film%29.png"
+		"img": "img/Bird_Box.png"
 	},
 
 
 	{
 		"name": "The Emoji Movie(2017)",
-		"img": "https://upload.wikimedia.org/wikipedia/en/6/63/The_Emoji_Movie_film_poster.jpg"
+		"img": "img/The_Emoji_Movie.jpg"
 	},
 
 	{
 		"name": "Fifty Shades of Grey(2015)",
-		"img": "https://upload.wikimedia.org/wikipedia/en/7/73/Fifty_Shades_of_Grey_poster.jpg"
+		"img": "img/Fifty_Shades_of_Grey.jpg"
 	},
 
 	{
 		"name": "Twilight(2008)",
-		"img": "https://upload.wikimedia.org/wikipedia/en/b/b6/Twilight_%282008_film%29_poster.jpg"
+		"img": "img/Twilight.jpg"
 	},
 	{
 		"name": "Clash of the Titans(2010)",
-		"img": "https://i.4pcdn.org/tv/1506604605798.jpg"
+		"img": "img/Clashofthetitans.jpg"
 	}
 ]
