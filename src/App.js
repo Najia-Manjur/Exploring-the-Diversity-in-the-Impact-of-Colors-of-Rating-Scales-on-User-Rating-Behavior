@@ -105,22 +105,20 @@ const _ratedMovie = array().of(obj({
   "name": str,
   "img": str,
   "commonRate": num,
-  "color-circle": num,
   "color-star": num,
   "color-emoji": num,
-  "circle": num,
-  "emoji": num
+  "emoji": num,
+  "color-personality": num,
 })).min(0);
 
 const _reviewedMovie = array().of(obj({
   "name": str,
   "img": str,
   "commonRate": num,
-  "color-circle": num,
   "color-star": num,
   "color-emoji": num,
-  "circle": num,
   "emoji": num,
+  "color-personality": num,
   "chosenRatings": array().of(num).min(1)
 })).min(0);
 
@@ -255,7 +253,7 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path="/" component={ConsentPage} />
             <Route exact path="/demographics" component={Demographics} />
-            <Route exact path="/info" component={PersonalityPage} />
+            <Route exact path="/info/:pageNo" component={PersonalityPage} />
             <Route exact path="/error" component={ErrorPage} />
             <RestrictedRoute exact path="/common" component={CommonRatePage} />
             <RestrictedRoute exact path="/reviewoverall" component={ReviewoverallPage} />

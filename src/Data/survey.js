@@ -24,6 +24,14 @@ export default {
         )
       );
       shuffle(survey.navSequence);
+
+      // sectionNo = 0;
+      // for (var i=0;i<survey.navSequence.length;i++) {
+      //   if(i%10==0) {
+      //       sectionNo+=1;
+      //   }
+      //   survey.navSequence[i].pageNo = pageNo;
+      // }
     }
     return survey;
   },

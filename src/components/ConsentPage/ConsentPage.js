@@ -35,8 +35,8 @@ class ConsentPage extends React.Component {
             
             <h5>Researchers</h5>
             <ul>
-              <li>Najia Manjur, Graduate Student, Department of Computer Science, University of Saskatchewan, email: <a href="mailto: nam907@usask.ca">nam907@usask.ca</a></li>
-              <li>Maliha Mahbub, Graduate Student, Department of Computer Science, University of Saskatchewan, email: <a href="mailto: mam789@usask.ca">mam789@usask.ca</a></li>
+              <li>Najia Manjur, Graduate Student, Department of Computer Science, University of Saskatchewan, email: <a href="mailto: nam907@mail.usask.ca">nam907@mail.usask.ca</a></li>
+              <li>Maliha Mahbub, Graduate Student, Department of Computer Science, University of Saskatchewan, email: <a href="mailto: mam789@mail.usask.ca">mam789@mail.usask.ca</a></li>
             </ul>
             <h5>Supervisor</h5>
             

@@ -33,7 +33,8 @@ class Demographics extends React.Component {
           survey.get().personality.country = country;
           survey.get().personality.gender = gender;
 
-          this.props.history.replace("/info");
+          var pageNo = 1;
+          this.props.history.replace(`/info/${pageNo}`);
         }
       } catch (error) {
         alert(error.message);

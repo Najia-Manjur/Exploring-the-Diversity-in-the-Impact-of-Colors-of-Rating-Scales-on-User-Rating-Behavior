@@ -46,7 +46,7 @@ class CommonRatePage extends React.Component {
 
         return alert("Please rate all the movies");
       }
-      const { movieid, ratingstyle } = survey.get().navSequence.pop();
+      const { movieid, ratingstyle} = survey.get().navSequence.pop();
       this.props.history.replace(`/rate/${movieid}/${ratingstyle}`);
     }
 
@@ -94,7 +94,7 @@ class CommonRatePage extends React.Component {
                       <input type="radio" id="no" name={"watched-" + name} value="no" checked={watched === "no"} onChange={this.handleChangeWatched.bind(this, i)} />
                       <label>No</label>
                       <br/>
-                  </ListGroup.Item>
+                  </ListGroup.Item> 
                 })
             }
           </ListGroup>

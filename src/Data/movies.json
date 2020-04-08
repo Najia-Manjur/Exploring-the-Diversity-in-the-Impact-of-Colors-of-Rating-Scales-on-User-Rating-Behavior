@@ -1,47 +1,67 @@
 [{
-		"name": "Joker (2019)",
+		"name": "Joker",
 		"img": "img/Joker.jpg"
 	},
 	{
-		"name": "Gone Girl(2014)",
+		"name": "Gone Girl",
 		"img": "img/gone_girl.jpg"
 	},
 	{
-		"name": "Deadpool(2016)",
+		"name": "Deadpool",
 		"img": "img/Deadpool.png"
 	},
 	{
-		"name": "Aladdin (2019)",
+		"name": "Aladdin",
 		"img": "img/Aladdin.png"
+	},
+	{
+		"name": "Alice In Wonderland",
+		"img": "img/Alice-In-Wonderland.jpg"
+	},
+	{
+		"name": "Godzilla: King of the Monsters",
+		"img": "img/Godzilla_King_of_the_Monsters.png"
+	},
+	{
+		"name": "Prometheus",
+		"img": "img/Prometheus.jpg"
+	},
+	{
+		"name": "The Da Vinci Code",
+		"img": "img/The_da_vinci_code.jpg"
+	},
+	{
+		"name": "Troy",
+		"img": "img/Troy.jpg"
 	},
 
 	{
-		"name": "Captain Marvel (2019)",
+		"name": "Captain Marvel",
 		"img": "img/Captain_Marvel.jpg"
 	},
 
 	{
-		"name": "Bird Box(2018)",
+		"name": "Bird Box",
 		"img": "img/Bird_Box.png"
 	},
 
 
 	{
-		"name": "The Emoji Movie(2017)",
+		"name": "The Emoji Movie",
 		"img": "img/The_Emoji_Movie.jpg"
 	},
 
 	{
-		"name": "Fifty Shades of Grey(2015)",
+		"name": "Fifty Shades of Grey",
 		"img": "img/Fifty_Shades_of_Grey.jpg"
 	},
 
 	{
-		"name": "Twilight(2008)",
+		"name": "Twilight",
 		"img": "img/Twilight.jpg"
 	},
 	{
-		"name": "Clash of the Titans(2010)",
+		"name": "Clash of the Titans",
 		"img": "img/Clashofthetitans.jpg"
 	}
 ]
