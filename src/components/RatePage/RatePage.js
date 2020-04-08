@@ -65,7 +65,7 @@ class RatePage extends React.Component {
         <Container>
           <h6></h6>
           <p>{"Section " + sectionNo + " of 4" }</p>
-          <p>{movie_number}</p>
+         
           <p>Please rate the movie: </p>
           <img src={img} alt="Poster" height="400" width="240" />
           <h6>{name}</h6>
