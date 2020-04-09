@@ -5,16 +5,16 @@
 	color: yellow;
 }
 .survey-darkred {
-	color: #ce0606;;
+	color: #c10808; 
 }
 .survey-red {
-	color: red;
+	color: #f32828;
 }
 /*.survey-orange {
 	color: orange;
 }*/
 .survey-green {
-	color: #92D050;
+	color: #0da50d;
 }
 .survey-darkgreen {
 	color: DarkGreen;
@@ -31,3 +31,4 @@
 .survey-darkblue {
 	color: #007bff;
 }
+/*#ce0606;;*/
