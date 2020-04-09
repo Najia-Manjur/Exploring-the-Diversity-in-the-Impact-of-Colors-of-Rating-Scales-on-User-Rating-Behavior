@@ -41,7 +41,7 @@ class RatePage extends React.Component {
       console.log(curNum%15);
 
       if (curNum%15 == 0) {
-        var pageNo = parseInt(curNum/15) + 3;
+        var pageNo = parseInt((curNum-1)/15) + 3;
         return this.props.history.replace(`/info/${pageNo}`);
       } else {
         const { movieid, ratingstyle } = survey.get().navSequence.pop();

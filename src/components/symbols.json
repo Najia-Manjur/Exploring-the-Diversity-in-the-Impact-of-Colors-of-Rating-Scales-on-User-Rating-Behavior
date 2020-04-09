@@ -21,14 +21,14 @@
         "empty":[ 
             "fa fa-star-o fa-2x survey-darkred",
             "fa fa-star-o fa-2x survey-red",
-            "fa fa-star-o fa-2x survey-orange",
+            "fa fa-star-o fa-2x survey-yellow",
             "fa fa-star-o fa-2x survey-green",
             "fa fa-star-o fa-2x survey-darkgreen"
         ],
         "full":[ 
             "fa fa-star fa-2x survey-darkred",
             "fa fa-star fa-2x survey-red",
-            "fa fa-star fa-2x survey-orange",
+            "fa fa-star fa-2x survey-yellow",
             "fa fa-star fa-2x survey-green",
             "fa fa-star fa-2x survey-darkgreen"
         ]
@@ -37,14 +37,14 @@
         "empty":[ 
             "far fa-frown-open fa-2x survey-darkred",
             "far fa-frown fa-2x survey-red",
-            "far fa-meh fa-2x survey-orange",
+            "far fa-meh fa-2x survey-yellow",
             "far fa-smile fa-2x survey-green",
             "far fa-grin fa-2x survey-darkgreen"
         ],
         "full":[ 
             "fas fa-frown-open fa-2x survey-darkred",
             "fas fa-frown fa-2x survey-red",
-            "fas fa-meh fa-2x survey-orange",
+            "fas fa-meh fa-2x survey-yellow",
             "fas fa-smile fa-2x survey-green",
             "fas fa-grin fa-2x survey-darkgreen"
         ]
@@ -69,14 +69,14 @@
         "empty":[ 
             "fa fa-star-o fa-2x survey-darkred",
             "fa fa-star-o fa-2x survey-red",
-            "fa fa-star-o fa-2x survey-orange",
+            "fa fa-star-o fa-2x survey-yellow",
             "fa fa-star-o fa-2x survey-blue",
             "fa fa-star-o fa-2x survey-darkblue"
         ],
         "full":[ 
             "fa fa-star fa-2x survey-darkred",
             "fa fa-star fa-2x survey-red",
-            "fa fa-star fa-2x survey-orange",
+            "fa fa-star fa-2x survey-yellow",
             "fa fa-star fa-2x survey-blue",
             "fa fa-star fa-2x survey-darkblue"
         ]
