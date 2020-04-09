@@ -97,12 +97,7 @@ class PersonalityPage extends React.Component {
           "faultWithOthers", 
           "thoroughJob", 
           "depressed", 
-          "original",
-          "reserved",
-          "helpful",
-          "careless",
-          "relaxed",
-          "curious",],
+          ],
         2: [
           "positiveEff1",
           "positiveEff2",
@@ -119,44 +114,48 @@ class PersonalityPage extends React.Component {
           "otherEff5",
         ],
         3: [
+          "original",
+          "reserved",
+          "helpful",
+          "careless",
+          "relaxed",
+          "curious",
           "energy",
           "quarrels",
           "reliable",
           "tense",
+        ],
+        4: [
           "deepThinker",
           "enthusiasm",
           "forgiving",
           "disorganized",
           "worried",
           "activeImagination",
-        ],
-        4: [
-          ,
           "quiet",
           "trusting",
           "lazy",
           "upset",
+        ],
+        5: [
           "inventive",
           "assertive",
           "coldAloof",
           "perseverence",
           "moody",
           "artistic",
-        ],
-        5: [
           "shy",
           "kind",
           "efficient",
           "calm",
+        ],
+        6: [
           "routineWork",
           "outgoing",
           "rude",
           "makePlans",
           "nervous",
           "reflective",
-        ],
-        6: [
-          
           "fewArtInterest",
           "cooperative",
           "distracted",
@@ -253,30 +252,6 @@ class PersonalityPage extends React.Component {
         <tr>
           <td>Is depressed, blue</td>
           {radioRow("depressed")}
-        </tr>
-        <tr>
-          <td>Is original, comes up with new ideas</td>
-          {radioRow("original")}
-        </tr>
-        <tr>
-          <td>Is reserved</td>
-          {radioRow("reserved")}
-        </tr>
-        <tr>
-          <td>Is helpful and unselfish with others</td>
-          {radioRow("helpful")}
-        </tr>
-        <tr>
-          <td>Can be somewhat careless</td>
-          {radioRow("careless")}
-        </tr>
-        <tr>
-          <td>Is relaxed, handles stress well</td>
-          {radioRow("relaxed")}
-        </tr>
-        <tr>
-          <td>Is curious about many different things</td>
-          {radioRow("curious")}
         </tr>
 
       </tbody>
@@ -375,6 +350,30 @@ class PersonalityPage extends React.Component {
             <th>Agree Strongly</th>
           </tr>
 
+        <tr>
+          <td>Is original, comes up with new ideas</td>
+          {radioRow("original")}
+        </tr>
+        <tr>
+          <td>Is reserved</td>
+          {radioRow("reserved")}
+        </tr>
+        <tr>
+          <td>Is helpful and unselfish with others</td>
+          {radioRow("helpful")}
+        </tr>
+        <tr>
+          <td>Can be somewhat careless</td>
+          {radioRow("careless")}
+        </tr>
+        <tr>
+          <td>Is relaxed, handles stress well</td>
+          {radioRow("relaxed")}
+        </tr>
+        <tr>
+          <td>Is curious about many different things</td>
+          {radioRow("curious")}
+        </tr>
           <tr>
             <td>Is full of energy</td>
             {radioRow("energy")}
@@ -391,6 +390,22 @@ class PersonalityPage extends React.Component {
             <td>Can be tense</td>
             {radioRow("tense")}
           </tr>
+
+        </tbody>
+      );
+
+    if (this.state.pageNo == 4)
+      page = (
+        <tbody>
+          <tr>
+            <th></th>
+            <th>Disagree Strongly</th>
+            <th>Disagree a little</th>
+            <th>Neither agree nor disagree</th>
+            <th>Agree a little</th>
+            <th>Agree Strongly</th>
+          </tr> 
+
           <tr>
             <td>Is ingenious, a deep thinker</td>
             {radioRow("deepThinker")}
@@ -415,21 +430,6 @@ class PersonalityPage extends React.Component {
             <td>Has an active imagination</td>
             {radioRow("activeImagination")}
           </tr>
-
-        </tbody>
-      );
-
-    if (this.state.pageNo == 4)
-      page = (
-        <tbody>
-          <tr>
-            <th></th>
-            <th>Disagree Strongly</th>
-            <th>Disagree a little</th>
-            <th>Neither agree nor disagree</th>
-            <th>Agree a little</th>
-            <th>Agree Strongly</th>
-          </tr> 
           <tr>
             <td>Tends to be quiet</td>
             {radioRow("quiet")}
@@ -446,6 +446,22 @@ class PersonalityPage extends React.Component {
             <td>Is emotionally stable, not easily upset</td>
             {radioRow("upset")}
           </tr>
+          
+        </tbody>
+      );
+
+    if (this.state.pageNo == 5)
+      page = (
+        <tbody>
+          <tr>
+            <th></th>
+            <th>Disagree Strongly</th>
+            <th>Disagree a little</th>
+            <th>Neither agree nor disagree</th>
+            <th>Agree a little</th>
+            <th>Agree Strongly</th>
+          </tr>
+
           <tr>
             <td>Is inventive</td>
             {radioRow("inventive")}
@@ -469,20 +485,6 @@ class PersonalityPage extends React.Component {
           <tr>
             <td>Values artistic, aesthetic experiences</td>
             {radioRow("artistic")}
-          </tr>
-        </tbody>
-      );
-
-    if (this.state.pageNo == 5)
-      page = (
-        <tbody>
-          <tr>
-            <th></th>
-            <th>Disagree Strongly</th>
-            <th>Disagree a little</th>
-            <th>Neither agree nor disagree</th>
-            <th>Agree a little</th>
-            <th>Agree Strongly</th>
           </tr> 
           <tr>
             <td>Is sometimes shy, inhibited</td>
@@ -500,6 +502,22 @@ class PersonalityPage extends React.Component {
             <td>Remains calm in tense situations</td>
             {radioRow("calm")}
           </tr>
+          
+        </tbody>
+      );
+
+    if (this.state.pageNo == 6)
+      page = (
+        <tbody>
+          <tr>
+            <th></th>
+            <th>Disagree Strongly</th>
+            <th>Disagree a little</th>
+            <th>Neither agree nor disagree</th>
+            <th>Agree a little</th>
+            <th>Agree Strongly</th>
+          </tr>
+
           <tr>
             <td>Prefers work that is routine</td>
             {radioRow("routineWork")}
@@ -523,20 +541,6 @@ class PersonalityPage extends React.Component {
           <tr>
             <td>Likes to reflect, play with ideas</td>
             {radioRow("reflective")}
-          </tr>
-        </tbody>
-      );
-
-    if (this.state.pageNo == 6)
-      page = (
-        <tbody>
-          <tr>
-            <th></th>
-            <th>Disagree Strongly</th>
-            <th>Disagree a little</th>
-            <th>Neither agree nor disagree</th>
-            <th>Agree a little</th>
-            <th>Agree Strongly</th>
           </tr>
           <tr>
             <td>Has few artistic interests</td>
