@@ -28,9 +28,9 @@ class CommonRatePage extends React.Component {
     }
 
     this.handleNext = () => {
-      // if (survey.get().selectedMovies.filter(m => typeof m.commonRate !== 'number' || typeof m.watched !== 'string').length > 0) {
-      //   return alert("Please rate all the movies");
-      // }
+      if (survey.get().selectedMovies.filter(m => typeof m.commonRate !== 'number' || typeof m.watched !== 'string').length > 0) {
+        return alert("Please rate all the movies");
+      }
       const { movieid, ratingstyle} = survey.get().navSequence.pop();
       this.props.history.replace(`/rate/${movieid}/${ratingstyle}`);
     }

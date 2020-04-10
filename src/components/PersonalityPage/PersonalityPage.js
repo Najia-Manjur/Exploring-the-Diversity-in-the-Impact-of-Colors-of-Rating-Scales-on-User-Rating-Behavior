@@ -168,7 +168,7 @@ class PersonalityPage extends React.Component {
       let isAll = true;
       for (key of pageItems[pageNo]) {
         if (this.state[key] == 0) {
-          isAll = true;
+          isAll = false;
           console.log("Did not find " + key);
         }
       }
