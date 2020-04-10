@@ -175,13 +175,14 @@ class PersonalityPage extends React.Component {
 
       if (!isAll) alert("Please answer all questions.");
       else {
+        survey.get().personality = utils.clone(this.state);
+        
         if (pageNo == 1) {
           document.body.scrollTop = document.documentElement.scrollTop = 0;
           this.setState({
             pageNo: pageNo + 1,
           });
         } else if (pageNo == 2) {
-          survey.get().personality = utils.clone(this.state);
           this.props.history.replace("/common");
         } else if (pageNo == 6) {
           return this.props.history.replace(`/reviewoverall`);
