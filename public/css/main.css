@@ -1,0 +1,13 @@
+.progressBarContainer {
+	display: flex;
+}
+
+.bottomPad {
+	padding-bottom: 20px;
+}
+
+.progress {
+	flex: 1;
+	border: 1px solid white;
+	border-radius: 0;
+}

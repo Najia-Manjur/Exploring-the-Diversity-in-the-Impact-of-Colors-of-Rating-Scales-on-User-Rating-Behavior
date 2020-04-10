@@ -3,6 +3,7 @@ import { Button, Container } from "react-bootstrap";
 import utils from "../utils";
 import survey from "../../Data/survey";
 import dot from "dot-prop";
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 class PersonalityPage extends React.Component {
   constructor(props) {
@@ -167,7 +168,7 @@ class PersonalityPage extends React.Component {
       let isAll = true;
       for (key of pageItems[pageNo]) {
         if (this.state[key] == 0) {
-          isAll = false;
+          isAll = true;
           console.log("Did not find " + key);
         }
       }
@@ -212,6 +213,39 @@ class PersonalityPage extends React.Component {
         </td>
       ));
     };
+
+    var progressInstance = "";
+
+    if(pageNo > 2) {
+
+      const getNow = (pageNo, label) => {
+        if(pageNo < this.state.pageNo)
+          return label?'100%':100;
+        else if(pageNo === this.state.pageNo)
+          return label?'94%':94;
+        else
+          return label?'':0;
+      };
+
+      progressInstance = (
+        <div className={"bottomPad"}>
+          <div className={"progressBarContainer"}>
+            <ProgressBar variant="info" now={100} label={`Section 1`} />
+            <ProgressBar variant="info" now={100} label={`Section 2`} />
+            <ProgressBar variant="info" now={100} label={`Section 3`} />
+            <ProgressBar variant="info" now={100} label={`Section 4`} />
+          </div>
+          <div className={"progressBarContainer"}>
+            <ProgressBar striped animated variant="success" now={getNow(3, false)} label={getNow(3, true)} />
+            <ProgressBar striped animated variant="success" now={getNow(4, false)} label={getNow(4, true)} />
+            <ProgressBar striped animated variant="success" now={getNow(5, false)} label={getNow(5, true)} />
+            <ProgressBar striped animated variant="success" now={getNow(6, false)} label={getNow(6, true)} />
+          </div>
+        </div>
+      );
+    }
+
+
 
     let pageDesc = (
       <div>
@@ -564,6 +598,7 @@ class PersonalityPage extends React.Component {
     return (
       <div className="vertical-center">
         <Container>
+          {progressInstance}
           {pageDesc}
           <table border="0" cellPadding="10">
             {page}
