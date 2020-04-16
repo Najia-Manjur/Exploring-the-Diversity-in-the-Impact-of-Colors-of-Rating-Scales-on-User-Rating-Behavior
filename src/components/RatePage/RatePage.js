@@ -80,12 +80,14 @@ class RatePage extends React.Component {
           <ProgressBar variant="info" now={100} label={`Section 2`} />
           <ProgressBar variant="info" now={100} label={`Section 3`} />
           <ProgressBar variant="info" now={100} label={`Section 4`} />
+          <ProgressBar variant="info" now={100} label={`Section 5`} />
         </div>
         <div className={"progressBarContainer"}>
           <ProgressBar striped animated variant="success" now={getNow(sectionNo, 1, movie_number, false)} label={getNow(sectionNo, 1, movie_number, true)} />
           <ProgressBar striped animated variant="success" now={getNow(sectionNo, 2, movie_number, false)} label={getNow(sectionNo, 2, movie_number, true)} />
           <ProgressBar striped animated variant="success" now={getNow(sectionNo, 3, movie_number, false)} label={getNow(sectionNo, 3, movie_number, true)} />
           <ProgressBar striped animated variant="success" now={getNow(sectionNo, 4, movie_number, false)} label={getNow(sectionNo, 4, movie_number, true)} />
+          <ProgressBar striped animated variant="success" now={getNow(sectionNo, 5, movie_number, false)} label={getNow(sectionNo, 5, movie_number, true)} />
         </div>
       </div>
     );

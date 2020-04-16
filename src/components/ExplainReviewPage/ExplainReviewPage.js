@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import survey from "../../Data/survey";
 import utils from "../utils";
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 class ExplainReviewPage extends React.Component {
   constructor(props) {
@@ -17,9 +18,30 @@ class ExplainReviewPage extends React.Component {
   }
 
   render() {
+
+    const progressInstance = (
+      <div className={"bottomPad"}>
+        <div className={"progressBarContainer"}>
+          <ProgressBar variant="info" now={100} label={`Section 1`} />
+          <ProgressBar variant="info" now={100} label={`Section 2`} />
+          <ProgressBar variant="info" now={100} label={`Section 3`} />
+          <ProgressBar variant="info" now={100} label={`Section 4`} />
+          <ProgressBar variant="info" now={100} label={`Section 5`} />
+        </div>
+        <div className={"progressBarContainer"}>
+          <ProgressBar striped animated variant="success" now={100} label={`100%`} />
+          <ProgressBar striped animated variant="success" now={100} label={`100%`} />
+          <ProgressBar striped animated variant="success" now={100} label={`100%`} />
+          <ProgressBar striped animated variant="success" now={100} label={`100%`} />
+          <ProgressBar striped animated variant="success" now={12} label={`12%`} />
+        </div>
+      </div>
+    );
+    
     return (
       <div className="vertical-center">
         <Container>
+          {progressInstance}
           <h6>For the movies that you rated so far using 6 different scales, all the 6 numeric values of your ratings will appear for each movie. If the ratings appear different for different scales, please select the value you think is best suited for the movie.</h6>
           <h6>For example, let us assume you have given the movie Deadpool the following 6 different values for 6 rating scales:</h6>
           <img src={"https://www.dvd-trailers.gr/dvd/deadpool_2016.jpg"} alt="Poster" height="400" width="240" />

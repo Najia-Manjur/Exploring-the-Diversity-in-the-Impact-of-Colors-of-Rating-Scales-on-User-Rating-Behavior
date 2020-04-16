@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import survey from "../../Data/survey";
 import symbols from "../symbols.json";
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 class ReviewPage extends React.Component {
   constructor(props) {
@@ -52,9 +53,32 @@ class ReviewPage extends React.Component {
 
   render() {
     const movie = this.getMovie();
+
+    let now = parseInt(100*(17 - survey.get().reviewSequence.length)/18);
+
+    const progressInstance = (
+      <div className={"bottomPad"}>
+        <div className={"progressBarContainer"}>
+          <ProgressBar variant="info" now={100} label={`Section 1`} />
+          <ProgressBar variant="info" now={100} label={`Section 2`} />
+          <ProgressBar variant="info" now={100} label={`Section 3`} />
+          <ProgressBar variant="info" now={100} label={`Section 4`} />
+          <ProgressBar variant="info" now={100} label={`Section 5`} />
+        </div>
+        <div className={"progressBarContainer"}>
+          <ProgressBar striped animated variant="success" now={100} label={`100%`} />
+          <ProgressBar striped animated variant="success" now={100} label={`100%`} />
+          <ProgressBar striped animated variant="success" now={100} label={`100%`} />
+          <ProgressBar striped animated variant="success" now={100} label={`100%`} />
+          <ProgressBar striped animated variant="success" now={now} label={`${now}%`} />
+        </div>
+      </div>
+    );
+    
     return (
       <div className="text-center">
         <Container>
+          {progressInstance}
           <h6>For the movies that you rated so far using 6 different scales, all the 6 numeric values of your ratings will appear for each movie. please select all the boxes which have the value you think is best suited for the movie:</h6>
           <img src={movie.img} alt="Poster" height="400" width="240" />
           <h6>{movie.name}</h6>

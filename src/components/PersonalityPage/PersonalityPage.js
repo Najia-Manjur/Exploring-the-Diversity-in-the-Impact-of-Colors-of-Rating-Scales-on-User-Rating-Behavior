@@ -168,7 +168,7 @@ class PersonalityPage extends React.Component {
       let isAll = true;
       for (key of pageItems[pageNo]) {
         if (this.state[key] == 0) {
-          isAll = false;
+          isAll = true;
           console.log("Did not find " + key);
         }
       }
@@ -176,7 +176,7 @@ class PersonalityPage extends React.Component {
       if (!isAll) alert("Please answer all questions.");
       else {
         survey.get().personality = utils.clone(this.state);
-        
+
         if (pageNo == 1) {
           document.body.scrollTop = document.documentElement.scrollTop = 0;
           this.setState({
@@ -218,7 +218,6 @@ class PersonalityPage extends React.Component {
     var progressInstance = "";
 
     if(pageNo > 2) {
-
       const getNow = (pageNo, label) => {
         if(pageNo < this.state.pageNo)
           return label?'100%':100;
@@ -235,17 +234,18 @@ class PersonalityPage extends React.Component {
             <ProgressBar variant="info" now={100} label={`Section 2`} />
             <ProgressBar variant="info" now={100} label={`Section 3`} />
             <ProgressBar variant="info" now={100} label={`Section 4`} />
+            <ProgressBar variant="info" now={100} label={`Section 5`} />
           </div>
           <div className={"progressBarContainer"}>
             <ProgressBar striped animated variant="success" now={getNow(3, false)} label={getNow(3, true)} />
             <ProgressBar striped animated variant="success" now={getNow(4, false)} label={getNow(4, true)} />
             <ProgressBar striped animated variant="success" now={getNow(5, false)} label={getNow(5, true)} />
             <ProgressBar striped animated variant="success" now={getNow(6, false)} label={getNow(6, true)} />
+            <ProgressBar striped animated variant="success" now={getNow(7, false)} label={getNow(7, true)} />
           </div>
         </div>
       );
     }
-
 
 
     let pageDesc = (
