@@ -47,7 +47,7 @@ class CommonRatePage extends React.Component {
     return (
       <div>
         <Container>
-          <h6>Please rate the following movies:</h6>
+          <h6>Please rate the following 15 movies. Since the list appears horizontally, you can see the whole list by moving the horizontal scroll bar.</h6>
           <ListGroup 
             style={{
               overflow: "auto"
