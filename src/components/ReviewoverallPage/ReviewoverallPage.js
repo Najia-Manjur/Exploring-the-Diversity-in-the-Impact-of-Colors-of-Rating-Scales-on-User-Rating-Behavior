@@ -22,12 +22,8 @@ class ReviewoverallPage extends React.Component {
     }
 
     this.handleNext = () => {
-      if(this.state.choice==-1)
-        return alert("Please select an option.");
-      else{
       survey.get().reviewOverall = this.state.choice;
       this.props.history.replace(`/commonratingscalepage`);
-    }
     }
   }
 

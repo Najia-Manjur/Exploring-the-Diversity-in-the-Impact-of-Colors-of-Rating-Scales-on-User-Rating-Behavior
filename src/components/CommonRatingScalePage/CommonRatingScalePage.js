@@ -22,12 +22,8 @@ class CommonRatingScalePage extends React.Component {
     }
 
     this.handleNext = () => {
-      if(this.state.choice==-1)
-        return alert("Please select an option.");
-      else{
       survey.get().mostAsked = this.state.choice;
       this.props.history.replace(`/explainreview`);
-    }
     }
   }
 
