@@ -79,7 +79,8 @@ class ReviewPage extends React.Component {
       <div className="text-center">
         <Container>
           {progressInstance}
-          <h6>For the movies that you rated so far using 6 different scales, all the 6 numeric values of your ratings will appear for each movie. please select all the boxes which have the value you think is best suited for the movie:</h6>
+          <h6>For the movies that you rated so far using 5 different scales, all the 5 numeric values of your ratings will appear for each movie.please select any one of the boxes which have the value you think is best suited
+          for the movie:</h6>
           <img src={movie.img} alt="Poster" height="400" width="240" />
           <h6>{movie.name}</h6>
           {
