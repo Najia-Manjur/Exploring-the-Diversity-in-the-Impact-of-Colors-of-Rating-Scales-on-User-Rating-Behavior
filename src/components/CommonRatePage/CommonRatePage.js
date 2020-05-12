@@ -51,7 +51,7 @@ class CommonRatePage extends React.Component {
     return (
       <div>
         <Container>
-          <h6>A list of 15 products is shown here.You can see all the products in the list by moving the horizontal bar.</h6> 
+          <h6>A list of products is shown here.You can see all the products in the list by moving the horizontal bar.</h6> 
           <ul>
             <li>For the prodcuts you have used before, select the option "Yes" and rate the product based on how much you like it or not.</li>
             <li>For the prodcuts you have not had an experience with, select the option "No" and skip rating.</li>
