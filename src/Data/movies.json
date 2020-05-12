@@ -1,67 +1,85 @@
 [{
-		"name": "Joker",
-		"img": "img/Joker.jpg"
+		"name": "Google Chrome",
+		"img": "img/chrome.png"
 	},
 	{
-		"name": "Green Lantern",
-		"img": "img/GreenLantern.jpg"
+		"name": "Mozilla Firefox",
+		"img": "img/firefox.png"
 	},
 	{
-		"name": "Deadpool",
-		"img": "img/Deadpool.png"
+		"name": "Internet Explorer",
+		"img": "img/internetexplorer.png"
 	},
 	{
-		"name": "Aladdin",
-		"img": "img/Aladdin.png"
+		"name": "Colgate Toothpaste",
+		"img": "img/colgate.jpg"
 	},
 	{
-		"name": "Alice In Wonderland",
-		"img": "img/Alice-In-Wonderland.jpg"
+		"name": "Crest Toothpaste",
+		"img": "img/crest.jpg"
 	},
 	{
-		"name": "Godzilla: King of the Monsters",
-		"img": "img/Godzilla_King_of_the_Monsters.png"
+		"name": "Sensodyne Toothpaste",
+		"img": "img/sensodyne.jpg"
 	},
 	{
-		"name": "Prometheus",
-		"img": "img/Prometheus.jpg"
+		"name": "Domino's Pizza",
+		"img": "img/dominos.png"
 	},
 	{
-		"name": "The Da Vinci Code",
-		"img": "img/The_da_vinci_code.jpg"
+		"name": "KFC",
+		"img": "img/kfc.png"
 	},
 	{
-		"name": "Troy",
-		"img": "img/Troy.jpg"
-	},
-
-	{
-		"name": "Captain Marvel",
-		"img": "img/Captain_Marvel.jpg"
-	},
-
-	{
-		"name": "Bird Box",
-		"img": "img/Bird_Box.png"
-	},
-
-
-	{
-		"name": "Hellboy",
-		"img": "img/Hellboy.png"
-	},
-
-	{
-		"name": "Fifty Shades of Grey",
-		"img": "img/Fifty_Shades_of_Grey.jpg"
-	},
-
-	{
-		"name": "Twilight",
-		"img": "img/Twilight.jpg"
+		"name": "Pizza Hut",
+		"img": "img/pizzahut.jpg"
 	},
 	{
-		"name": "Clash of the Titans",
-		"img": "img/Clashofthetitans.jpg"
+		"name": "Facebook",
+		"img": "img/facebook.jpg"
+	},
+	{
+		"name": "Linkedin",
+		"img": "img/linkedin.png"
+	},
+	{
+		"name": "Twitter",
+		"img": "img/twitter.jpg"
+	},
+	{
+		"name": "Gmail",
+		"img": "img/gmail.png"
+	},
+	{
+		"name": "Office 365",
+		"img": "img/office365.png"
+	},
+	{
+		"name": "Yahoo! Mail",
+		"img": "img/yahoo.jpg"
+	},
+	{
+		"name": "Microsoft Photos",
+		"img": "img/microsoftphotos.png"
+	},
+	{
+		"name": "Adobe Photoshop",
+		"img": "img/photoshop.jpg"
+	},
+	{
+		"name": "Picasa",
+		"img": "img/picasa.jpg"
+	},
+	{
+		"name": "Pepsi",
+		"img": "img/pepsi.jpg"
+	},
+	{
+		"name": "Redbull",
+		"img": "img/redbull.jpg"
+	},
+	{
+		"name": "Sprite",
+		"img": "img/sprite.jpg"
 	}
 ]

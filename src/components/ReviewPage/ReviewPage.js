@@ -54,7 +54,8 @@ class ReviewPage extends React.Component {
   render() {
     const movie = this.getMovie();
 
-    let now = parseInt(100*(17 - survey.get().reviewSequence.length)/18);
+    let listLen = survey.get().selectedMovies.length;
+    let now = parseInt(100*((listLen + 2) - survey.get().reviewSequence.length)/(listLen + 3));
 
     const progressInstance = (
       <div className={"bottomPad"}>
@@ -79,9 +80,9 @@ class ReviewPage extends React.Component {
       <div className="text-center">
         <Container>
           {progressInstance}
-          <h6>For the movies that you rated so far using 5 different scales, all the 5 numeric values of your ratings will appear for each movie.please select any one of the boxes which have the value you think is best suited
-          for the movie:</h6>
-          <img src={movie.img} alt="Poster" height="400" width="240" />
+          <h6>For the products that you rated so far using 5 different scales, all the 5 numeric values of your ratings will appear for each product.please select any one of the boxes which have the value you think is best suited
+          for the product:</h6>
+          <img src={movie.img} alt="Poster" height="240" width="240" />
           <h6>{movie.name}</h6>
           {
             symbols.allRatingStyles.map((r, i) =>

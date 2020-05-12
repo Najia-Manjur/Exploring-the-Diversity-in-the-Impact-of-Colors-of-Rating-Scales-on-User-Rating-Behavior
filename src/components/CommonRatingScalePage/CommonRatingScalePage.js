@@ -28,6 +28,8 @@ class CommonRatingScalePage extends React.Component {
   }
 
   render() {
+    let listLen = survey.get().selectedMovies.length;
+    let now = parseInt(100/(listLen + 3));
 
     const progressInstance = (
       <div className={"bottomPad"}>
@@ -43,7 +45,7 @@ class CommonRatingScalePage extends React.Component {
           <ProgressBar striped animated variant="success" now={100} label={`100%`} />
           <ProgressBar striped animated variant="success" now={100} label={`100%`} />
           <ProgressBar striped animated variant="success" now={100} label={`100%`} />
-          <ProgressBar striped animated variant="success" now={6} label={`6%`} />
+          <ProgressBar striped animated variant="success" now={now} label={`${now}%`} />
         </div>
       </div>
     );

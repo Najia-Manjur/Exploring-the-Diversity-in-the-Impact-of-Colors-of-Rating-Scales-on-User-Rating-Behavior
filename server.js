@@ -135,7 +135,7 @@ async function listFiles() {
 }
 
 async function getOverallTableId() {
-  const filesFiltered = (await listFiles()).filter( ({ name }) => name === 'Final_Data');
+  const filesFiltered = (await listFiles()).filter( ({ name }) => name === 'User_Data');
 
   console.log("Already has spreadsheets");
 
@@ -144,7 +144,7 @@ async function getOverallTableId() {
     return filesFiltered[0].id;
   }
   console.log("Creating new spreadsheets");
-  const overallSheet = await createSpreadsheet('Final_Data');
+  const overallSheet = await createSpreadsheet('User_Data');
   await insertRows(overallSheet.spreadsheetId,
     [
       [

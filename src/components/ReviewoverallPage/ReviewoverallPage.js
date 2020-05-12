@@ -52,7 +52,7 @@ class ReviewoverallPage extends React.Component {
       <div>
         <Container>
           {progressInstance}
-          <h6>Your ratings will be considered very helpful into the final ratings provided by the studio, would you like to re-rate it again ? If so, which one of the rating scales would you use?</h6>
+          <h6>Your ratings will be considered very helpful into the final ratings of the product, would you like to re-rate it again ? If so, which one of the rating scales would you use?</h6>
           {
             symbols.allRatingStyles.map((r, i) =>
               <div key={i}>

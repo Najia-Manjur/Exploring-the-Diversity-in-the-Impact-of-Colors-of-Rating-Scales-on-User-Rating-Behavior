@@ -221,8 +221,11 @@ class PersonalityPage extends React.Component {
       const getNow = (pageNo, label) => {
         if(pageNo < this.state.pageNo)
           return label?'100%':100;
-        else if(pageNo === this.state.pageNo)
-          return label?'94%':94;
+        else if(pageNo === this.state.pageNo) {
+          let listLen = survey.get().selectedMovies.length;
+          let percent = 100 - parseInt(100/(listLen+1));
+          return label?`${percent}%`:percent;
+        }
         else
           return label?'':0;
       };

@@ -28,15 +28,19 @@ class CommonRatePage extends React.Component {
     }
 
     this.handleNext = () => {
-      if (survey.get().selectedMovies.filter(m => typeof m.commonRate !== 'number' || typeof m.watched !== 'string').length > 0) {
-        return alert("Please rate all the movies");
-      }
+      // if (survey.get().selectedMovies.filter(m => typeof m.commonRate !== 'number' || typeof m.watched !== 'string').length > 0) {
+      //   return alert("Please rate all the movies");
+      // }
+
+      let selectedMovies = survey.get().selectedMovies.filter(m => m.watched == "yes")
+      survey.loadMovies(selectedMovies);
+
       const { movieid, ratingstyle} = survey.get().navSequence.pop();
       this.props.history.replace(`/rate/${movieid}/${ratingstyle}`);
     }
 
     this.handleBack = () => {
-      if (window.confirm('Are you sure? All selected movies will be cleared')) {
+      if (window.confirm('Are you sure? All selected products will be cleared')) {
         survey.retain("personality");
         this.props.history.replace(`/`);
       }
@@ -47,7 +51,11 @@ class CommonRatePage extends React.Component {
     return (
       <div>
         <Container>
-          <h6>Please rate the following 15 movies. Since the list appears horizontally, you can see the whole list by moving the horizontal scroll bar.</h6>
+          <h6>A list of 15 products is shown here.You can see all the products in the list by moving the horizontal bar.</h6> 
+          <ul>
+            <li>For the prodcuts you have used before, select the option "Yes" and rate the product based on how much you like it or not.</li>
+            <li>For the prodcuts you have not had an experience with, select the option "No" and skip rating.</li>
+          </ul> 
           <ListGroup 
             style={{
               overflow: "auto"
@@ -62,7 +70,7 @@ class CommonRatePage extends React.Component {
                   // console.log(commonRate);
                   // console.log("watched " + watched);
                   return <ListGroup.Item key={i}>
-                    <img src={img} alt="Poster" height="400" width="240" /> <br/>
+                    <img src={img} alt="Poster" height="240" width="240" /> <br/>
                     <h6> {name} </h6>
                       <Rating
                         initialRating={commonRate}
@@ -72,7 +80,7 @@ class CommonRatePage extends React.Component {
                         onChange={this.handleChange(i)}
                       />
                       <p></p>
-                      <p>Have you watched this movie?</p>
+                      <p>Have you used this product?</p>
                       <input type="radio" id="yes" name={"watched-" + name} value="yes" checked={watched === "yes"} onChange={this.handleChangeWatched.bind(this, i)} />
                       <label>Yes</label>
                       <br/>
@@ -84,8 +92,8 @@ class CommonRatePage extends React.Component {
             }
           </ListGroup>
           <br/>
-          <p>From the next page onwards, you will be asked to rate these movies again using multiple scales. You do not have to
-          remember the exact rating you gave here for every movie, just go with the flow and rate what you feel like!</p>
+          <p>From the next page onwards, you will be asked to rate the selected products again. You do not have to
+          remember the exact rating you gave here for every product, just go with the flow and rate what you feel like!</p>
           <Button style={{"float":"right"}} onClick={this.handleNext}>Next</Button>
         </Container>
       </div>

@@ -37,12 +37,14 @@ class RatePage extends React.Component {
       //   }
 
       var ln = survey.get().navSequence.length;
-      var curNum = 60 - ln;
-      console.log(curNum);
-      console.log(curNum%15);
+      let listLen = survey.get().selectedMovies.length;
 
-      if (curNum%15 == 0) {
-        var pageNo = parseInt((curNum-1)/15) + 3;
+      var curNum = (listLen * 4) - ln;
+      console.log(curNum);
+      console.log(curNum%listLen);
+
+      if (curNum%listLen == 0) {
+        var pageNo = parseInt((curNum-1)/listLen) + 3;
         return this.props.history.replace(`/info/${pageNo}`);
       } else {
         const { movieid, ratingstyle } = survey.get().navSequence.pop();
@@ -57,9 +59,9 @@ class RatePage extends React.Component {
     const rated = survey.get().selectedMovies[m][r];
 
     console.log(survey.get().navSequence.length);
-    let movie_number = 60 - survey.get().navSequence.length;
-    // let movie_number = 0
-    let sectionNo = parseInt((movie_number-1)/15) + 1;
+    let listLen = survey.get().selectedMovies.length;    
+    let movie_number = (listLen * 4) - survey.get().navSequence.length;
+    let sectionNo = parseInt((movie_number-1)/listLen) + 1;
 
     const getNow = (curSec, rSec, curMovieNo, label) => {
       console.log(curSec, rSec, curMovieNo);
@@ -68,7 +70,8 @@ class RatePage extends React.Component {
       else if(curSec > rSec)
         return label? "100%":100;
       else {
-        var percent = parseInt(100*parseInt((curMovieNo-1)%15)/16);
+        let listLen = survey.get().selectedMovies.length;
+        var percent = parseInt(100*parseInt((curMovieNo-1)%listLen)/(listLen+1));
         return label? percent+"%":percent;
       }
     };
@@ -98,7 +101,7 @@ class RatePage extends React.Component {
           <h6></h6>
           {progressInstance}
           <p>Please rate the movie: </p>
-          <img src={img} alt="Poster" height="400" width="240" />
+          <img src={img} alt="Poster" height="240" width="240" />
           <h6>{name}</h6>
           {
             <Rating

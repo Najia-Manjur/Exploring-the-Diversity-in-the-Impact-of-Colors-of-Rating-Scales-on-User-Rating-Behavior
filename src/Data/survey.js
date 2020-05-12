@@ -6,34 +6,44 @@ import shuffle from "shuffle-array";
 let survey;
 
 export default {
-	get: () => {
+  get: () => {
     if (!survey) {
       survey = {};
       survey.personality = {};
-      survey.selectedMovies = movies;
-      const movieids = utils.numberList(movies.length);
-      const ratingstyles = symbols.ratingStyles;
+      
+        survey.selectedMovies = movies;
+        const movieids = utils.numberList(movies.length);
+        const ratingstyles = symbols.ratingStyles;
 
-      survey.navSequence = [];
-      movieids.forEach(movieid =>
-        ratingstyles.forEach(ratingstyle =>
-          survey.navSequence.push({
-            movieid,
-            ratingstyle
-          })
-        )
-      );
-      shuffle(survey.navSequence);
-
-      // sectionNo = 0;
-      // for (var i=0;i<survey.navSequence.length;i++) {
-      //   if(i%10==0) {
-      //       sectionNo+=1;
-      //   }
-      //   survey.navSequence[i].pageNo = pageNo;
-      // }
+        survey.navSequence = [];
+        movieids.forEach(movieid =>
+          ratingstyles.forEach(ratingstyle =>
+            survey.navSequence.push({
+              movieid,
+              ratingstyle
+            })
+          )
+        );
+        shuffle(survey.navSequence);
     }
+
     return survey;
+  },
+  loadMovies: (moviesList) => {
+    survey.selectedMovies = moviesList;
+    const movieids = utils.numberList(moviesList.length);
+    const ratingstyles = symbols.ratingStyles;
+
+    survey.navSequence = [];
+    movieids.forEach(movieid =>
+      ratingstyles.forEach(ratingstyle =>
+        survey.navSequence.push({
+          movieid,
+          ratingstyle
+        })
+      )
+    );
+    shuffle(survey.navSequence);
   },
   reset: () => {
     survey = {};
