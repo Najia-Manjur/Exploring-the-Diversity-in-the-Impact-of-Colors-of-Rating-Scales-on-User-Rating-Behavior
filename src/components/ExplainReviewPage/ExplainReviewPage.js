@@ -46,8 +46,8 @@ class ExplainReviewPage extends React.Component {
           {progressInstance}
           <h6>For the products that you rated so far using 5 different scales, all the 5 numeric values of your ratings will appear
           for each product.If the ratings appear different for different scales, please select the value you think is best suited for the product.</h6>
-          <h6>For example, let us assume you have given the movie Deadpool the following 6 different values for 5 rating scales: </h6>
-          <img src={"https://www.dvd-trailers.gr/dvd/deadpool_2016.jpg"} alt="Poster" height="400" width="240" />
+          <h6>For example, let us assume you have given the KFC the following 6 different values for 5 rating scales: </h6>
+          <img src={"https://upload.wikimedia.org/wikipedia/sco/b/bf/KFC_logo.svg"} alt="Poster" height="240" width="240" />
           {
             [3,3,4,3,4,4].map((r, i) =>
               <div key={i}>
