@@ -63,7 +63,7 @@ class ExplainReviewPage extends React.Component {
               </div>
             )
           }
-          <h6>If you think out of these values, 4 is the best rate for this product, then please select any one of the 3 rd, 4 th and last check boxes since they have the value 4. You just have to select any one of them and the rest will be automatically selected.If you have provided same value for a product, i.e.all 5 boxes are same, then kindly select any one of all boxes.Please be careful select only one value, which means
+          <h6>If you think out of these values, 4 is the best rate for this product, then please select any one of the 3 rd, 5 th and last check boxes since they have the value 4. You just have to select any one of them and the rest will be automatically selected.If you have provided same value for a product, i.e.all 5 boxes are same, then kindly select any one of all boxes.Please be careful select only one value, which means
           if you select value 4, you can not select any other number.</h6>
           <Button style={{"float":"right"}} onClick={this.handleNext}>Next</Button>
         </Container>

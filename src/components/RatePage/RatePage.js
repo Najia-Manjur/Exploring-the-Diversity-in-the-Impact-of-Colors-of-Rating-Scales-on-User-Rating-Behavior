@@ -28,7 +28,7 @@ class RatePage extends React.Component {
     this.handleNav = () => {
       const { m, r } = this.parse();
       if (typeof survey.get().selectedMovies[m][r] !== 'number') {
-        return alert("Please rate the movie");
+        return alert("Please rate the product");
       }
 
       // if (survey.get().navSequence.length ===
@@ -100,7 +100,7 @@ class RatePage extends React.Component {
         <Container>
           <h6></h6>
           {progressInstance}
-          <p>Please rate the movie: </p>
+          <p>Please rate the product: </p>
           <img src={img} alt="Poster" height="240" width="240" />
           <h6>{name}</h6>
           {
