@@ -23,6 +23,8 @@ class RatePage extends React.Component {
     this.handleChange = rating => {
       const { m, r } = this.parse();
       survey.get().selectedMovies[m][r] = rating;
+      console.log(r);
+      console.log(survey.get().selectedMovies);
     }
 
     this.handleNav = () => {
@@ -38,8 +40,9 @@ class RatePage extends React.Component {
 
       var ln = survey.get().navSequence.length;
       let listLen = survey.get().selectedMovies.length;
+      let ratingStylesLen = survey.get().ratingStylesLen
 
-      var curNum = (listLen * 4) - ln;
+      var curNum = (listLen * 5) - ln;
       console.log(curNum);
       console.log(curNum%listLen);
 
@@ -49,7 +52,7 @@ class RatePage extends React.Component {
       } else {
         const { movieid, ratingstyle } = survey.get().navSequence.pop();
         return this.props.history.replace(`/rate/${movieid}/${ratingstyle}`);
-      }  
+      }
     }
   }
 
@@ -59,8 +62,9 @@ class RatePage extends React.Component {
     const rated = survey.get().selectedMovies[m][r];
 
     console.log(survey.get().navSequence.length);
-    let listLen = survey.get().selectedMovies.length;    
-    let movie_number = (listLen * 4) - survey.get().navSequence.length;
+    let listLen = survey.get().selectedMovies.length;
+    let ratingStylesLen = survey.get().ratingStylesLen
+    let movie_number = (listLen * 5) - survey.get().navSequence.length;
     let sectionNo = parseInt((movie_number-1)/listLen) + 1;
 
     const getNow = (curSec, rSec, curMovieNo, label) => {
@@ -84,6 +88,7 @@ class RatePage extends React.Component {
           <ProgressBar variant="info" now={100} label={`Section 3`} />
           <ProgressBar variant="info" now={100} label={`Section 4`} />
           <ProgressBar variant="info" now={100} label={`Section 5`} />
+          <ProgressBar variant="info" now={100} label={`Section 6`} />
         </div>
         <div className={"progressBarContainer"}>
           <ProgressBar striped animated variant="success" now={getNow(sectionNo, 1, movie_number, false)} label={getNow(sectionNo, 1, movie_number, true)} />
@@ -91,6 +96,7 @@ class RatePage extends React.Component {
           <ProgressBar striped animated variant="success" now={getNow(sectionNo, 3, movie_number, false)} label={getNow(sectionNo, 3, movie_number, true)} />
           <ProgressBar striped animated variant="success" now={getNow(sectionNo, 4, movie_number, false)} label={getNow(sectionNo, 4, movie_number, true)} />
           <ProgressBar striped animated variant="success" now={getNow(sectionNo, 5, movie_number, false)} label={getNow(sectionNo, 5, movie_number, true)} />
+          <ProgressBar striped animated variant="success" now={getNow(sectionNo, 6, movie_number, false)} label={getNow(sectionNo, 6, movie_number, true)} />
         </div>
       </div>
     );

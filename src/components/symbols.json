@@ -1,6 +1,6 @@
 {
-    "allRatingStyles": ["commonRate","color-star","color-emoji","emoji","color-personality"],
-    "ratingStyles": ["color-star","color-emoji","emoji", "color-personality"],
+    "allRatingStyles": ["commonRate","color-star","color-emoji","ryb-emoji","emoji","color-personality"],
+    "ratingStyles": ["color-star","color-emoji","ryb-emoji","emoji", "color-personality"],
     "commonRate": {
         "empty": [
             "fa fa-star-o fa-2x survey-yellow",
@@ -47,6 +47,22 @@
             "fas fa-meh fa-2x survey-yellow",
             "fas fa-smile fa-2x survey-green",
             "fas fa-grin fa-2x survey-darkgreen"
+        ]
+    },
+    "ryb-emoji":{ 
+        "empty":[ 
+            "far fa-frown-open fa-2x survey-darkred",
+            "far fa-frown fa-2x survey-red",
+            "far fa-meh fa-2x survey-yellow",
+            "far fa-smile fa-2x survey-blue",
+            "far fa-grin fa-2x survey-darkblue"
+        ],
+        "full":[ 
+            "fas fa-frown-open fa-2x survey-darkred",
+            "fas fa-frown fa-2x survey-red",
+            "fas fa-meh fa-2x survey-yellow",
+            "fas fa-smile fa-2x survey-blue",
+            "fas fa-grin fa-2x survey-darkblue"
         ]
     },
     "emoji":{ 

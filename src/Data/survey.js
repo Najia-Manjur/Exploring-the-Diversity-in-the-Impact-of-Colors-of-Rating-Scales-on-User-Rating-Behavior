@@ -10,10 +10,11 @@ export default {
     if (!survey) {
       survey = {};
       survey.personality = {};
-      
+
         survey.selectedMovies = movies;
         const movieids = utils.numberList(movies.length);
         const ratingstyles = symbols.ratingStyles;
+        survey.ratingStylesLen = ratingstyles.length
 
         survey.navSequence = [];
         movieids.forEach(movieid =>
@@ -25,6 +26,7 @@ export default {
           )
         );
         shuffle(survey.navSequence);
+        console.log(survey.navSequence);
     }
 
     return survey;
@@ -44,6 +46,8 @@ export default {
       )
     );
     shuffle(survey.navSequence);
+    console.log("new survey");
+    console.log(survey.navSequence);
   },
   reset: () => {
     survey = {};

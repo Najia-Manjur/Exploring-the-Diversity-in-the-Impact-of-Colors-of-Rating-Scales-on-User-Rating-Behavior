@@ -51,12 +51,12 @@ class CommonRatePage extends React.Component {
     return (
       <div>
         <Container>
-          <h6>A list of products is shown here.You can see all the products in the list by moving the horizontal bar.</h6> 
+          <h6>A list of products is shown here.You can see all the products in the list by moving the horizontal bar.</h6>
           <ul>
             <li>For the prodcuts you have used before, select the option "Yes" and rate the product based on how much you like it or not.</li>
             <li>For the prodcuts you have not had an experience with, select the option "No" and skip rating.</li>
-          </ul> 
-          <ListGroup 
+          </ul>
+          <ListGroup
             style={{
               overflow: "auto"
             }}
@@ -87,7 +87,7 @@ class CommonRatePage extends React.Component {
                       <input type="radio" id="no" name={"watched-" + name} value="no" checked={watched === "no"} onChange={this.handleChangeWatched.bind(this, i)} />
                       <label>No</label>
                       <br/>
-                  </ListGroup.Item> 
+                  </ListGroup.Item>
                 })
             }
           </ListGroup>

@@ -107,6 +107,7 @@ const _ratedMovie = array().of(obj({
   "commonRate": num,
   "color-star": num,
   "color-emoji": num,
+  "ryb-emoji":num,
   "emoji": num,
   "color-personality": num,
 })).min(0);
@@ -117,6 +118,7 @@ const _reviewedMovie = array().of(obj({
   "commonRate": num,
   "color-star": num,
   "color-emoji": num,
+  "ryb-emoji":num,
   "emoji": num,
   "color-personality": num,
   "chosenRatings": array().of(num).min(1)

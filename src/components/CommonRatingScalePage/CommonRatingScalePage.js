@@ -39,8 +39,10 @@ class CommonRatingScalePage extends React.Component {
           <ProgressBar variant="info" now={100} label={`Section 3`} />
           <ProgressBar variant="info" now={100} label={`Section 4`} />
           <ProgressBar variant="info" now={100} label={`Section 5`} />
+          <ProgressBar variant="info" now={100} label={`Section 5`} />
         </div>
         <div className={"progressBarContainer"}>
+          <ProgressBar striped animated variant="success" now={100} label={`100%`} />
           <ProgressBar striped animated variant="success" now={100} label={`100%`} />
           <ProgressBar striped animated variant="success" now={100} label={`100%`} />
           <ProgressBar striped animated variant="success" now={100} label={`100%`} />

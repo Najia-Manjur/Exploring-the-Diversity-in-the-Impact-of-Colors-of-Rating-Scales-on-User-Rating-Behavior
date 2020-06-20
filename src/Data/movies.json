@@ -11,75 +11,75 @@
 		"img": "img/internetexplorer.png"
 	},
 	{
-		"name": "Colgate Toothpaste",
-		"img": "img/colgate.jpg"
+  "name": "Colgate Toothpaste",
+  "img": "img/colgate.jpg"
 	},
 	{
-		"name": "Crest Toothpaste",
-		"img": "img/crest.jpg"
+	  "name": "Crest Toothpaste",
+	  "img": "img/crest.jpg"
 	},
 	{
-		"name": "Sensodyne Toothpaste",
-		"img": "img/sensodyne.jpg"
+	  "name": "Sensodyne Toothpaste",
+	  "img": "img/sensodyne.jpg"
 	},
 	{
-		"name": "Domino's Pizza",
-		"img": "img/dominos.png"
+	  "name": "Domino's Pizza",
+	  "img": "img/dominos.png"
 	},
 	{
-		"name": "KFC",
-		"img": "img/kfc.png"
+	  "name": "KFC",
+	  "img": "img/kfc.png"
 	},
 	{
-		"name": "Pizza Hut",
-		"img": "img/pizzahut.jpg"
+	  "name": "Pizza Hut",
+	  "img": "img/pizzahut.jpg"
 	},
 	{
-		"name": "Facebook",
-		"img": "img/facebook.jpg"
+	  "name": "Facebook",
+	  "img": "img/facebook.jpg"
 	},
 	{
-		"name": "Linkedin",
-		"img": "img/linkedin.png"
+	  "name": "Linkedin",
+	  "img": "img/linkedin.png"
 	},
 	{
-		"name": "Twitter",
-		"img": "img/twitter.jpg"
+	  "name": "Twitter",
+	  "img": "img/twitter.jpg"
 	},
 	{
-		"name": "Gmail",
-		"img": "img/gmail.png"
+	  "name": "Gmail",
+	  "img": "img/gmail.png"
 	},
 	{
-		"name": "Office 365",
-		"img": "img/office365.png"
+	  "name": "Office 365",
+	  "img": "img/office365.png"
 	},
 	{
-		"name": "Yahoo! Mail",
-		"img": "img/yahoo.jpg"
+	  "name": "Yahoo! Mail",
+	  "img": "img/yahoo.jpg"
 	},
 	{
-		"name": "Microsoft Photos",
-		"img": "img/microsoftphotos.png"
+	  "name": "Microsoft Photos",
+	  "img": "img/microsoftphotos.png"
 	},
 	{
-		"name": "Adobe Photoshop",
-		"img": "img/photoshop.jpg"
+	  "name": "Adobe Photoshop",
+	  "img": "img/photoshop.jpg"
 	},
 	{
-		"name": "Picasa",
-		"img": "img/picasa.jpg"
+	  "name": "Picasa",
+	  "img": "img/picasa.jpg"
 	},
 	{
-		"name": "Pepsi",
-		"img": "img/pepsi.jpg"
+	  "name": "Pepsi",
+	  "img": "img/pepsi.jpg"
 	},
 	{
-		"name": "Redbull",
-		"img": "img/redbull.jpg"
+	  "name": "Redbull",
+	  "img": "img/redbull.jpg"
 	},
 	{
-		"name": "Sprite",
-		"img": "img/sprite.jpg"
+	  "name": "Sprite",
+	  "img": "img/sprite.jpg"
 	}
-]
+	]

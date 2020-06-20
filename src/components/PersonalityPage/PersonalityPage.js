@@ -94,10 +94,10 @@ class PersonalityPage extends React.Component {
 
       let pageItems = {
         1: [
-          "talkative", 
-          "faultWithOthers", 
-          "thoroughJob", 
-          "depressed", 
+          "talkative",
+          "faultWithOthers",
+          "thoroughJob",
+          "depressed",
           ],
         2: [
           "positiveEff1",
@@ -123,36 +123,39 @@ class PersonalityPage extends React.Component {
           "curious",
           "energy",
           "quarrels",
-          "reliable",
-          "tense",
         ],
         4: [
+          "reliable",
+          "tense",
           "deepThinker",
           "enthusiasm",
           "forgiving",
           "disorganized",
           "worried",
           "activeImagination",
+        ],
+        5: [
           "quiet",
           "trusting",
           "lazy",
           "upset",
-        ],
-        5: [
           "inventive",
           "assertive",
           "coldAloof",
           "perseverence",
+
+        ],
+        6: [
           "moody",
           "artistic",
           "shy",
           "kind",
           "efficient",
           "calm",
-        ],
-        6: [
           "routineWork",
           "outgoing",
+        ],
+        7: [
           "rude",
           "makePlans",
           "nervous",
@@ -184,7 +187,7 @@ class PersonalityPage extends React.Component {
           });
         } else if (pageNo == 2) {
           this.props.history.replace("/common");
-        } else if (pageNo == 6) {
+        } else if (pageNo == 7) {
           return this.props.history.replace(`/reviewoverall`);
         } else {
           const { movieid, ratingstyle } = survey.get().navSequence.pop();
@@ -238,6 +241,7 @@ class PersonalityPage extends React.Component {
             <ProgressBar variant="info" now={100} label={`Section 3`} />
             <ProgressBar variant="info" now={100} label={`Section 4`} />
             <ProgressBar variant="info" now={100} label={`Section 5`} />
+            <ProgressBar variant="info" now={100} label={`Section 6`} />
           </div>
           <div className={"progressBarContainer"}>
             <ProgressBar striped animated variant="success" now={getNow(3, false)} label={getNow(3, true)} />
@@ -245,6 +249,7 @@ class PersonalityPage extends React.Component {
             <ProgressBar striped animated variant="success" now={getNow(5, false)} label={getNow(5, true)} />
             <ProgressBar striped animated variant="success" now={getNow(6, false)} label={getNow(6, true)} />
             <ProgressBar striped animated variant="success" now={getNow(7, false)} label={getNow(7, true)} />
+            <ProgressBar striped animated variant="success" now={getNow(8, false)} label={getNow(8, true)} />
           </div>
         </div>
       );
@@ -420,14 +425,7 @@ class PersonalityPage extends React.Component {
             <td>Starts quarrels with others</td>
             {radioRow("quarrels")}
           </tr>
-          <tr>
-            <td>Is a reliable worker</td>
-            {radioRow("reliable")}
-          </tr>
-          <tr>
-            <td>Can be tense</td>
-            {radioRow("tense")}
-          </tr>
+
 
         </tbody>
       );
@@ -442,8 +440,15 @@ class PersonalityPage extends React.Component {
             <th>Neither agree nor disagree</th>
             <th>Agree a little</th>
             <th>Agree Strongly</th>
-          </tr> 
-
+          </tr>
+          <tr>
+            <td>Is a reliable worker</td>
+            {radioRow("reliable")}
+          </tr>
+          <tr>
+            <td>Can be tense</td>
+            {radioRow("tense")}
+          </tr>
           <tr>
             <td>Is ingenious, a deep thinker</td>
             {radioRow("deepThinker")}
@@ -468,23 +473,8 @@ class PersonalityPage extends React.Component {
             <td>Has an active imagination</td>
             {radioRow("activeImagination")}
           </tr>
-          <tr>
-            <td>Tends to be quiet</td>
-            {radioRow("quiet")}
-          </tr>
-          <tr>
-            <td>Is generally trusting</td>
-            {radioRow("trusting")}
-          </tr>
-          <tr>
-            <td>Tends to be lazy</td>
-            {radioRow("lazy")}
-          </tr>
-          <tr>
-            <td>Is emotionally stable, not easily upset</td>
-            {radioRow("upset")}
-          </tr>
-          
+
+
         </tbody>
       );
 
@@ -501,6 +491,22 @@ class PersonalityPage extends React.Component {
           </tr>
 
           <tr>
+            <td>Tends to be quiet</td>
+            {radioRow("quiet")}
+          </tr>
+          <tr>
+            <td>Is generally trusting</td>
+            {radioRow("trusting")}
+          </tr>
+          <tr>
+            <td>Tends to be lazy</td>
+            {radioRow("lazy")}
+          </tr>
+          <tr>
+            <td>Is emotionally stable, not easily upset</td>
+            {radioRow("upset")}
+          </tr>
+          <tr>
             <td>Is inventive</td>
             {radioRow("inventive")}
           </tr>
@@ -516,31 +522,8 @@ class PersonalityPage extends React.Component {
             <td>Perseveres until the task is finished</td>
             {radioRow("perseverence")}
           </tr>
-          <tr>
-            <td>Can be moody</td>
-            {radioRow("moody")}
-          </tr>
-          <tr>
-            <td>Values artistic, aesthetic experiences</td>
-            {radioRow("artistic")}
-          </tr> 
-          <tr>
-            <td>Is sometimes shy, inhibited</td>
-            {radioRow("shy")}
-          </tr>
-          <tr>
-            <td>Is considerate and kind to almost everyone</td>
-            {radioRow("kind")}
-          </tr>
-          <tr>
-            <td>Does things efficiently</td>
-            {radioRow("efficient")}
-          </tr>
-          <tr>
-            <td>Remains calm in tense situations</td>
-            {radioRow("calm")}
-          </tr>
-          
+
+
         </tbody>
       );
 
@@ -557,6 +540,30 @@ class PersonalityPage extends React.Component {
           </tr>
 
           <tr>
+            <td>Can be moody</td>
+            {radioRow("moody")}
+          </tr>
+          <tr>
+            <td>Values artistic, aesthetic experiences</td>
+            {radioRow("artistic")}
+          </tr>
+          <tr>
+            <td>Is sometimes shy, inhibited</td>
+            {radioRow("shy")}
+          </tr>
+          <tr>
+            <td>Is considerate and kind to almost everyone</td>
+            {radioRow("kind")}
+          </tr>
+          <tr>
+            <td>Does things efficiently</td>
+            {radioRow("efficient")}
+          </tr>
+          <tr>
+            <td>Remains calm in tense situations</td>
+            {radioRow("calm")}
+          </tr>
+          <tr>
             <td>Prefers work that is routine</td>
             {radioRow("routineWork")}
           </tr>
@@ -564,6 +571,22 @@ class PersonalityPage extends React.Component {
             <td>Is outgoing, sociable</td>
             {radioRow("outgoing")}
           </tr>
+
+        </tbody>
+      );
+
+    if (this.state.pageNo == 7)
+      page = (
+        <tbody>
+          <tr>
+            <th></th>
+            <th>Disagree Strongly</th>
+            <th>Disagree a little</th>
+            <th>Neither agree nor disagree</th>
+            <th>Agree a little</th>
+            <th>Agree Strongly</th>
+          </tr>
+
           <tr>
             <td>Is sometimes rude to others</td>
             {radioRow("rude")}
@@ -596,6 +619,8 @@ class PersonalityPage extends React.Component {
             <td>Is sophisticated in art, music, or literature</td>
             {radioRow("sophisticatedInArt")}
           </tr>
+
+
         </tbody>
       );
 
