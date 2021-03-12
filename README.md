@@ -1,0 +1,1 @@
+# Exploring-the-Diversity-in-the-Impact-of-Colors-of-Rating-Scales-on-User-Rating-Behavior
